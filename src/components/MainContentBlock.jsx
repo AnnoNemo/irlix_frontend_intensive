@@ -116,39 +116,6 @@ const MainContentBlock = () => {
         }
     }
 
-    // const defaultList = [ {}
-    //     number: 1
-    // ]
-    //
-    // const [list, setList] = useState(default);
-    //
-    // const [number, setNumber] = React.useState('');
-    // const onChange = (e) => setNumber(e.target.value);
-    //
-    //
-    // const onSubmit = () => {
-    //     setList(prevList => [...prevList, { number, name }])
-    //     setNumber()
-    //
-    // }
-    //
-    // const onClear = () => {
-    //     setList(dafaultList)
-    // }
-    //
-    // useEffect(() => {
-    //     localStorage.setItem('list', list);
-    // }, [list])
-    //
-    // useEffect(() => {
-    //     const stotagedLsit = localStorage.getItem('list');
-    //
-    //     if (stotagedLsit) {
-    //         setList(stotagedLsit)
-    //     }
-    //
-    // }, []);
-
     return (
         <main>
             <section className={styleName('left-content')}>
@@ -178,8 +145,6 @@ const MainContentBlock = () => {
                                 onKeyUp={checkCharInNumberInput}
                                 type="number"
                                 name={'number'}
-                                value={}
-                                onChange={)}
                             />
                         </label>
                     </div>
