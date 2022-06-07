@@ -1,0 +1,164 @@
+@import "../palette";
+@import "../adaptive_size_calc";
+
+.left-content {
+  @include adaptiv-value('padding-top', 160, 3);
+  @include adaptiv-value('padding-left', 160, 3);
+  @include adaptiv-value('padding-bottom', 160, 3);
+  @media (max-width: 1124px) {
+    & {
+      width: auto;
+      @include adaptiv-value('padding-top', 30, 3);
+      @include adaptiv-value('padding-bottom', 30, 3);
+      @include adaptiv-value('padding-right', 10, 3);
+      @include adaptiv-value('padding-left', 10, 3);
+    }
+  }
+
+  .left-content-container {
+    @include adaptiv-value('width', 650, 3);
+    @include adaptiv-value('height', 342, 3);
+    @media (max-width: 380px) {
+      & {
+        @include adaptiv-value('width', 400, 3);
+        @include adaptiv-value('height', 342, 3);
+      }
+    }
+
+    .main-header {
+      @include adaptiv-value('font-size', 72, 3);
+      font-weight: 500;
+      height: fit-content;
+      @include adaptiv-value('line-height', 84, 3);
+      @media (max-width: 1300px) {
+        & {
+          text-align: center;
+        }
+      }
+      @media (max-width: 380px) {
+        & {
+          text-align: center;
+          @include adaptiv-value('font-size', 60, 3);
+        }
+      }
+    }
+
+    .main-text {
+      @include adaptiv-value('line-height', 38, 3);
+      @include adaptiv-value('padding-bottom', 58, 3);
+      @include adaptiv-value('line-height', 37.5, 3);
+    }
+
+    .row-list-table {
+      @include adaptiv-value('line-height', 37.5, 3);
+
+      & > * {
+        display: block;
+      }
+
+      &__name-header {
+        text-align: left;
+        @include adaptiv-value('line-height', 37.5, 3);
+        @include adaptiv-value('padding-bottom', 8, 3);
+      }
+
+      &__list-container {
+        overflow: auto;
+      }
+
+      &__item * {
+        @include adaptiv-value('line-height', 37.5, 3);
+      }
+
+      &__number-item {
+        text-align: left;
+
+        &::after {
+          content: ") ";
+        }
+      }
+    }
+  }
+}
+
+.right-content {
+  @include adaptiv-value('padding-top', 240, 3);
+  @include adaptiv-value('padding-right', 160, 3);
+  @media (max-width: 1124px) {
+    & {
+      width: auto;
+      @include adaptiv-value('padding-top', 30, 3);
+      @include adaptiv-value('padding-bottom', 30, 3);
+      @include adaptiv-value('padding-right', 10, 3);
+      @include adaptiv-value('padding-left', 10, 3);
+    }
+  }
+
+  .row-adding-form {
+    @include adaptiv-value('width', 400, 3);
+    @include adaptiv-value('height', 278, 3);
+    margin-left: auto;
+    margin-right: 0px;
+    @include adaptiv-value('padding-top', 32, 3);
+    @include adaptiv-value('padding-bottom', 32, 3);
+    @include adaptiv-value('padding-right', 16, 3);
+    @include adaptiv-value('padding-left', 16, 3);
+    @include adaptiv-value('font-size', 16, 3);
+    border: 1px solid $color-black;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    @media (max-width: 1200px) {
+      & {
+        margin-left: 0px;
+      }
+    }
+
+    & * {
+      box-sizing: border-box;
+    }
+    & label {
+      display: block;
+      @include adaptiv-value('font-size', 16, 3);
+      @include adaptiv-value('line-height', 18.75, 3);
+    }
+    &__input {
+      width: 100%;
+      @include adaptiv-value('height', 48, 3);
+      @include adaptiv-value('padding-top', 4, 3);
+      @include adaptiv-value('padding-bottom', 5, 3);
+      @include adaptiv-value('padding-right', 11, 3);
+      @include adaptiv-value('padding-left', 11, 3);
+      border: 1px solid $color-black;
+    }
+    &__add-button {
+      width: auto;
+      @include adaptiv-value('height', 48, 3);
+      @include adaptiv-value('font-size', 16, 3);
+      @include adaptiv-value('line-height', 18.75, 3);
+      color: $color-white;
+      border: none;
+      padding: 0;
+      background-color: $color-black;
+      transition: background 0.01s linear;
+      filter: drop-shadow(5px 5px 10px #808080);
+
+      &:hover {
+        filter: drop-shadow(0px 9px 10px #2d2d2d);
+      }
+      &:active {
+        filter: drop-shadow(0px 14px 10px #b2b2b2);
+        background-color: $color-gray;
+      }
+      &:disabled {
+        background-color: $color-gray;
+        filter: opacity(32%);
+      }
+      &:disabled:active {
+        background-color: $color-gray;
+        filter: opacity(40%);
+      }
+    }
+  }
+}

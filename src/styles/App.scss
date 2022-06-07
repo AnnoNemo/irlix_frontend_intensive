@@ -1,0 +1,87 @@
+@import "reset";
+@import "palette";
+@import "scroll";
+@import "adaptive_size_calc";
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+
+  src: local("Roboto-Regular"),
+    url("../../public/fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+
+  src: local("Roboto-Medium"),
+  url("../../public/fonts/Roboto-Medium.ttf") format("ttf");
+}
+
+@include scrollbars(.3em, $color-black, $color-gray-transper);
+
+body {
+  min-width: $maxWidthContainer;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 400;
+  @include adaptiv-value('font-size', 32, 3);
+  width: 100vw;
+  height: 100vh;
+  &>div {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+
+header {
+  @include adaptiv-value('height', 80, 3);
+  @include adaptiv-value('padding-top', 8, 3);
+  @include adaptiv-value('padding-bottom', 8, 3);
+  @include adaptiv-value('padding-right', 32, 3);
+  @include adaptiv-value('padding-left', 32, 3);
+  box-sizing: border-box;
+  color: $color-white;
+  background-color: $color-black;
+}
+
+main {
+  color: $color-black;
+  background-color: $color-white;
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  &>section {
+    width: 50%;
+  }
+  @media (max-width: 1024px) {
+    & {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+    &>section {
+      width: auto;
+    }
+  }
+}
+
+footer {
+  @include adaptiv-value('height', 160, 3);
+  @include adaptiv-value('padding-top', 48, 3);
+  @include adaptiv-value('padding-bottom', 48, 3);
+  @include adaptiv-value('padding-right', 32, 3);
+  @include adaptiv-value('padding-left', 32, 3);
+  box-sizing: border-box;
+  color: $color-white;
+  background-color: $color-gray;
+}
+
+.irlix_main_logo{
+  @include adaptiv-value('width', 155, 3);
+  @include adaptiv-value('height', 64, 3);
+}
