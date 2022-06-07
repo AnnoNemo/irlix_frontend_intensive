@@ -1,5 +1,7 @@
 # Тестовое задание для frontend интенсива.
 
+Готовая сборка находится по ссылке: [тык](https://annonemo.github.io/irlix_frontend_intensive/dist/index.html) 
+
 ### Логика работы
 
 ###### Коротко
