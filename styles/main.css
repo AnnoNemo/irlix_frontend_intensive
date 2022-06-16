@@ -38,9 +38,9 @@ blockquote:before, blockquote:after {
 }
 
 q:before, q:after {
-               content: '';
-               content: none;
-           }
+   content: '';
+   content: none;
+}
 
 table {
     border-collapse: collapse;
@@ -155,16 +155,16 @@ body {
     color: #C4C1CF;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 2.25rem;
     display: flex;
     flex-flow: column nowrap;
 }
 
 .header {
     position: fixed;
-    display: block;
     top: 0;
-    background-color: inherit;
+    background-color: #201F2E;
+    min-width: 40rem;
     width: 100%;
     height: 15rem;
     flex: 0 0 auto;
@@ -180,51 +180,27 @@ body {
     color: #FFFFFF;
     font-size: 3rem;
     text-transform: capitalize;
-    padding-bottom: 1px
+    padding-bottom: 0.92rem;
 }
 
 .header-left-container__date-text {
     color: #C4C1CF;
-    font-size: 18px; /*TODO Исправить, узнать какой размер должен быть в rem*/
+    font-size: 2.25rem;
 }
 
 .header-right-container__logo {
-    display: block;
     position: absolute;
-    width: 141px;
-    height: 135px;
+    width: 17.625rem;
+    height: 16.875rem;
     top: 0;
     right: 0;
 }
 
 .header-right-container__logo-image  {
-    filter: drop-shadow(0px 4px 4px #0000003F);
+    filter: drop-shadow(0 0.5rem 0.5rem #0000003F);
 }
 
-.main-content {
-    padding-right: 4rem;
-    padding-left: 4rem;
-    flex: 1 0 auto;
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.main-content::before {
-    content: ' ';
-    position: static;
-    display: block;
-    flex: 0 0 auto;
-    width: 100%;
-    height: 182px;
-}
-
-.main-content .container {
-    /*height: inherit;*/
-    flex: 1 0 auto;
-}
-
-.main-content .quick-filters-menu {
-    position: fixed;
+.header .quick-filters-menu {
     display: block;
     top: 14rem;
     left: 0;
@@ -235,28 +211,45 @@ body {
     z-index: 2;
 }
 
-.main-content .cards-table__cocktail-card {
-    width: 320px;
-    height: 421px;
+.main-content {
+    padding-top:  22.75rem;
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.main-content .container {
+    flex: 1 0 auto;
+}
+
+
+.main-content .cards-table {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.main-content .cocktail-card {
+    width: 40rem;
+    height: 52.625rem;
     background-color: #250b6c;
     border-radius: 4rem;
     margin-top: 4rem;
 }
 
-.main-content .cards-table__cocktail-card:last-child {
+.main-content .cocktail-card:last-child {
     margin-bottom: 4rem;
 }
 
-.cards-table__cocktail-card div {
+.cocktail-card div {
     font-weight: 500;
     padding: 4rem;
     border-radius: 4rem;
 }
 
 .footer {
-    display: block;
     bottom: 0;
     position: sticky;
+    min-width: 40rem;
     height: 12rem;
     padding: 3rem 4rem 3rem 4rem;
     border-top-right-radius: 4rem;
@@ -271,8 +264,49 @@ body {
     border-radius: 4rem;
     background-color: #44414E;
     color: #C4C1CF;
-    font-size: 18px; /*TODO Исправить, узнать какой размер должен быть в rem*/
+    font-size: 2.25rem;
     font-weight: 500;
-    /*width: 13rem; !*TODO 104px? temp Убрать это*!*/
-    /*height: 6rem;*/
+}
+
+.footer .footer__favorites-button {
+    display: none;
+    text-transform: capitalize;
+    padding: 2rem 3rem;
+    border-radius: 4rem;
+    background-color: #44414E;
+    color: #C4C1CF;
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.footer .footer__search-icon {
+    display: none;
+    border-radius: 4rem;
+    background-color: #44414E;
+    color: #C4C1CF;
+}
+
+@media (max-width: 767px) {
+    .main-content .container {
+        margin-right: auto;
+        margin-left: auto;
+        width: 40rem;
+        transition: width 0.5s ease-in-out, left 1s ease-in-out;
+    }
+    .main-content .cocktail-card:nth-child(odd) {
+        transition: margin-right 0.5s ease-in-out, left 1s ease-in-out;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-content .container {
+        margin-right: auto;
+        margin-left: auto;
+        width: 84rem;
+        transition: width 0.5s ease-in-out, left 1s ease-in-out;
+    }
+    .main-content .cocktail-card:nth-child(odd) {
+        margin-right: auto;
+        transition: margin-right 0.5s ease-in-out, left 1s ease-in-out;
+    }
 }
