@@ -1,0 +1,312 @@
+/*
+*** RESET STYLE BLOCK START ***
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after {
+   content: '';
+   content: none;
+}
+
+q:before, q:after {
+   content: '';
+   content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+button, input[type="button"] {
+    border: 0;
+}
+/*
+*** RESET STYLE END ***
+*/
+
+/*
+*** Font Start
+*/
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Roboto Thin'),
+        url('../fonts/Roboto-Thin.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 100;
+    src: local('Roboto Thin Italic'),
+        url('../fonts/Roboto-ThinItalic.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'),
+        url('../fonts/Roboto-Light.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Roboto Light Italic'),
+        url('../fonts/Roboto-LightItalic.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'),
+        url('../fonts/Roboto-Regular.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Roboto Italic'),
+        url('../fonts/Roboto-Italic.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Roboto Medium'),
+        url('../fonts/Roboto-Medium.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Roboto Medium Italic'),
+        url('../fonts/Roboto-MediumItalic.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Bold'),
+        url('../fonts/Roboto-Bold.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Roboto Bold Italic'),
+        url('../fonts/Roboto-BoldItalic.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Roboto Black'),
+    url('../fonts/Roboto-Black.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 900;
+    src: local('Roboto Black Italic'),
+        url('../fonts/Roboto-BlackItalic.ttf');
+}
+/*
+*** Font End
+*/
+
+html {
+    font-size: 8px;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #201F2E;
+    color: #C4C1CF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2.25rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    background-color: #201F2E;
+    min-width: 40rem;
+    width: 100%;
+    height: 15rem;
+    flex: 0 0 auto;
+    z-index: 3;
+}
+
+.header .header-left-container {
+    padding: 4rem;
+}
+
+.header-left-container__title {
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 3rem;
+    text-transform: capitalize;
+    padding-bottom: 0.92rem;
+}
+
+.header-left-container__date-text {
+    color: #C4C1CF;
+    font-size: 2.25rem;
+}
+
+.header-right-container__logo {
+    position: absolute;
+    width: 17.625rem;
+    height: 16.875rem;
+    top: 0;
+    right: 0;
+}
+
+.header-right-container__logo-image  {
+    filter: drop-shadow(0 0.5rem 0.5rem #0000003F);
+}
+
+.header .quick-filters-menu {
+    display: block;
+    top: 14rem;
+    left: 0;
+    flex: 0 0 auto;
+    background-color: #201F2E;
+    height: 7rem;
+    width: 100%;
+    z-index: 2;
+}
+
+.main-content {
+    padding-top:  22.75rem;
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.main-content .container {
+    flex: 1 0 auto;
+}
+
+
+.main-content .cards-table {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.main-content .cocktail-card {
+    width: 40rem;
+    height: 52.625rem;
+    background-color: #250b6c;
+    border-radius: 4rem;
+    margin-top: 4rem;
+}
+
+.main-content .cocktail-card:last-child {
+    margin-bottom: 4rem;
+}
+
+.cocktail-card div {
+    font-weight: 500;
+    padding: 4rem;
+    border-radius: 4rem;
+}
+
+.footer {
+    bottom: 0;
+    position: sticky;
+    min-width: 40rem;
+    height: 12rem;
+    padding: 3rem 4rem 3rem 4rem;
+    border-top-right-radius: 4rem;
+    border-top-left-radius: 4rem;
+    background-color: #0E0D13;
+    flex: 0 0 auto;
+}
+
+.footer .footer__search-button {
+    text-transform: capitalize;
+    padding: 2rem 3rem;
+    border-radius: 4rem;
+    background-color: #44414E;
+    color: #C4C1CF;
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.footer .footer__favorites-button {
+    display: none;
+    text-transform: capitalize;
+    padding: 2rem 3rem;
+    border-radius: 4rem;
+    background-color: #44414E;
+    color: #C4C1CF;
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.footer .footer__search-icon {
+    display: none;
+    border-radius: 4rem;
+    background-color: #44414E;
+    color: #C4C1CF;
+}
+
+@media (max-width: 767px) {
+    .main-content .container {
+        margin-right: auto;
+        margin-left: auto;
+        width: 40rem;
+        transition: width 0.5s ease-in-out, left 1s ease-in-out;
+    }
+    .main-content .cocktail-card:nth-child(odd) {
+        transition: margin-right 0.5s ease-in-out, left 1s ease-in-out;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-content .container {
+        margin-right: auto;
+        margin-left: auto;
+        width: 84rem;
+        transition: width 0.5s ease-in-out, left 1s ease-in-out;
+    }
+    .main-content .cocktail-card:nth-child(odd) {
+        margin-right: auto;
+        transition: margin-right 0.5s ease-in-out, left 1s ease-in-out;
+    }
+}
