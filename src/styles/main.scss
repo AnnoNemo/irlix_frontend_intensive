@@ -1,0 +1,272 @@
+@import "reset";
+@import "fonts";
+@import "pallete";
+@import "button";
+
+html {
+    font-size: 8px;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: $c_general_background;
+    color: $c_default_text_color;
+    font: {
+        family: 'Roboto', sans-serif;
+        weight: 300;
+        size: 18px;
+    }
+    #root {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    background-color: $c_general_background;
+    min-width: 40rem;
+    width: 100%;
+    flex: 0 0 auto;
+    z-index: 5;
+
+    .header-left-container {
+        padding: 4rem;
+
+        .header-left-container__title {
+            font-weight: 700;
+            color: $c_highlight_text_color;
+            font-size: 3rem;
+            text-transform: capitalize;
+        }
+
+        .header-left-container__date-text {
+            margin-top: 1rem;
+            color: $c_default_text_color;
+            font-size: 18px;
+        }
+    }
+
+    .header-right-container {
+        .header-right-container__logo {
+            position: absolute;
+            width: 137px;
+            height: 127px;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+.main-content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .header-place {
+        height: 114px;
+    }
+
+
+    .quick-filters-menu {
+        position: fixed;
+        top: 14rem;
+        left: 0;
+        flex: 0 0 auto;
+        background-color: $c_general_background;
+        width: 100%;
+        padding: {
+            top: 1rem;
+            right: 6rem;
+            bottom: 1rem;
+            left: 6rem;
+        };
+        z-index: 4;
+        overflow: auto;
+        &__list {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 3rem;
+            align-items: center;
+        }
+        &__list-item_active {
+            padding: 10px 20px;
+            color: $c_highlight_text_color;
+            border: {
+                radius: 4rem;
+                width: 1px;
+                style: solid;
+                color: $c_default_text_color;
+            }
+        }
+        &__list-item-text{
+        }
+    }
+    .container {
+        margin-right: auto;
+        margin-left:auto;
+        padding-top: 12rem;
+        align-self: center;
+        flex: 1 0 auto;
+
+        .cocktail-list-wrapper {
+
+            .cards-table {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 4rem;
+            }
+
+            .cocktail-card {
+                width: 40rem;
+                height: 52.625rem;
+                //min-width: 40rem;
+                //max-width: 42rem;
+                background-color: #250b6c;
+                border-radius: 4rem;
+                //margin-top: 4rem;
+                overflow: hidden;
+                position: relative;
+                color: inherit;
+
+                & *, &:active, &:hover {
+                    color: inherit;
+                }
+
+                .cocktail-card__content-wrapper {
+                    border-radius: inherit;
+                    width: inherit;
+                    height: inherit;
+                    z-index: 2;
+                    position: absolute;
+                    background: linear-gradient(180deg, $c_card_line_gradient_end 48.96%, $c_card_line_gradient_start 89.58%);
+
+
+                    .alcohol-percent-badge {
+                        width: 10rem;
+                        height: 10rem;
+                        position: absolute;
+                        top: 18px;
+                        left: 18px;
+                        background-color: $c_badge_background;
+                        border-radius: 3rem;
+
+                        .alcohol-percent-badge_wrapper{
+                            height: inherit;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            border-radius: inherit;
+                            margin: {
+                                right: 1rem;
+                            };
+                            align-items: flex-end;
+                            justify-content: center;
+                        }
+
+                        .alcohol-percent-badge__value {
+                            font: {
+                                size: 3rem;
+                                weight: 700;
+                            };
+                            color: $c_highlight_text_color;
+                            text-align: right;
+                        }
+                        .alcohol-percent-badge__text {
+                            text-transform: capitalize;
+                            font:{
+                                size: 14px;
+                            }
+                            text-align: right;
+                        }
+                    }
+
+                    .cocktail-card__cocktail-info {
+                        position: absolute;
+                        margin: {
+                            bottom: 3rem;
+                            left: 4rem;
+                        };
+                        bottom: 0;
+
+                        .cocktail-card__cocktail-name {
+                            font: {
+                                size: 3rem;
+                                weight: 700;
+                            };
+                            color: $c_highlight_text_color;
+                        }
+                        .cocktail-card__cocktail-name {
+                            text-transform: lowercase;
+                        }
+                        .cocktail-card__cocktail-name{
+                            text-transform: capitalize;
+                        }
+                        .cocktail-card__cocktail_description {
+                            text-transform: lowercase;
+                        }
+                        .cocktail-card__cocktail_description:first-letter {
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+
+
+                .cocktail-card__cocktail-photo {
+                    //display: none;
+                    position: absolute;
+                    border-radius: inherit;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .cocktail-card:last-child {
+                margin-bottom: 4rem;
+            }
+        }
+    }
+
+    .footer-place {
+        height: 12rem;
+    }
+}
+
+.footer {
+    bottom: 0;
+    position: fixed;
+    min-width: 40rem;
+    width: 100%;
+    height: 12rem;
+    padding: 3rem 4rem 3rem 4rem;
+    border-top-right-radius: 4rem;
+    border-top-left-radius: 4rem;
+    z-index: 5;
+    background-color: $c_footer_background;
+    flex: 0 0 auto;
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .container {
+        max-width: 40rem;
+        transition: width 0.5s ease-in-out, left 1s ease-in-out;
+    }
+    //.main-content .cocktail-card:nth-child(odd) {
+    //    transition: margin-right 0.5s ease-in-out, left 1s ease-in-out;
+    //}
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 84rem;
+        transition: width 0.5s ease-in-out, left 1s ease-in-out;
+    }
+    //.cocktail-card:nth-child(odd) {
+    //    margin-right: auto;
+    //    transition: margin-right 0.5s ease-in-out, left 1s ease-in-out;
+    //}
+}
