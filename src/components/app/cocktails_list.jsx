@@ -17,7 +17,7 @@ const CocktailsList = () => {
                         <div className="cocktail-card__cocktail_description">Освежающий напиток</div>
                     </div>
                 </a>
-                <img className="cocktail-card__cocktail-photo" src="images/cocktail_1_card.png" alt=""/>
+                <img className="cocktail-card__cocktail-photo" src="./images/cocktail_1_card.png" alt=""/>
             </aside>
         ),(
             <aside className="cocktail-card">
@@ -33,7 +33,7 @@ const CocktailsList = () => {
                         <div className="cocktail-card__cocktail_description">Освежающий напиток</div>
                     </div>
                 </div>
-                <img className="cocktail-card__cocktail-photo" src="images/cocktail_2_card.png" alt=""/>
+                <img className="cocktail-card__cocktail-photo" src="./images/cocktail_2_card.png" alt=""/>
             </aside>
         )
     ]

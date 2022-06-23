@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const plugins = [
   new MiniCssExtractPlugin({
-    filename: mode === 'production' ? '[name].[contenthash].css' : '[name].css',
+    filename: mode === 'production' ? './styles/[name].[contenthash].css' : './styles/[name].css',
   }),
   new HtmlWebpackPlugin({
     template: './public/index.html',
@@ -67,10 +67,16 @@ module.exports = {
           'postcss-loader',
           'sass-loader',
         ],
+        generator: {
+          filename: "./styles/[name][ext]",
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
         type: mode === 'production' ? 'asset' : 'asset/resource',
+        generator: {
+          filename: "./images/[name][ext]",
+        }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
@@ -88,6 +94,9 @@ module.exports = {
             cacheDirectory: true,
           },
         },
+        generator: {
+          filename: "./scripts/[name][ext]",
+        }
       },
     ],
   },

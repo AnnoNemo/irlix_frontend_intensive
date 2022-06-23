@@ -68,7 +68,7 @@ var CocktailsList = function CocktailsList() {
     className: "cocktail-card__cocktail_description"
   }, "\u041E\u0441\u0432\u0435\u0436\u0430\u044E\u0449\u0438\u0439 \u043D\u0430\u043F\u0438\u0442\u043E\u043A"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     className: "cocktail-card__cocktail-photo",
-    src: "images/cocktail_1_card.png",
+    src: "./images/cocktail_1_card.png",
     alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("aside", {
     className: "cocktail-card"
@@ -90,7 +90,7 @@ var CocktailsList = function CocktailsList() {
     className: "cocktail-card__cocktail_description"
   }, "\u041E\u0441\u0432\u0435\u0436\u0430\u044E\u0449\u0438\u0439 \u043D\u0430\u043F\u0438\u0442\u043E\u043A"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
     className: "cocktail-card__cocktail-photo",
-    src: "images/cocktail_2_card.png",
+    src: "./images/cocktail_2_card.png",
     alt: ""
   }))];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
