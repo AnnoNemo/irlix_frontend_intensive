@@ -1,0 +1,32 @@
+.common_button {
+  background-color: #44414E;
+  color: #C4C1CF;
+  font-size: 2.25rem;
+  text-transform: capitalize;
+  padding: 2rem 3rem;
+  border-radius: 32rem;
+  transition-duration: 0.22s;
+  font-weight: 500;
+  @media (pointer: fine) {
+    &:hover, &:focus {
+      background-color: #353240;
+      color: #E9E6F2;
+    }
+    &:active {
+      background-color: #120E20;
+      color: #FF005C;
+      border: 1px solid #FF005C;
+    }
+  }
+  @media(pointer: coarse) {
+    &:hover, &:focus {
+      background-color: #353240;
+      color: #E9E6F2;
+    }
+    &:active {
+      background-color: #120E20;
+      color: #FF005C;
+      border: 1px solid #FF005C;
+    }
+  }
+}
