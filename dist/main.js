@@ -44,10 +44,10 @@ __webpack_require__.r(__webpack_exports__);
 var cocktails_list = [];
 var temp_list = [{
   id: 0,
-  name: "Blackberry",
+  name: "BlacKBerrY",
   alcohol: 30,
   type: "алкоГОль",
-  short_description: "Фруктовый напиток",
+  short_description: "ФруКТОВый напиток",
   photo: __webpack_require__(/*! @images/cocktail_1_card.png */ "./public/images/cocktail_1_card.png")
 }, {
   id: 1,
@@ -114,13 +114,13 @@ var CocktailsList = function CocktailsList() {
     }, alcohol, "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "alcohol-percent-badge__text"
     }, type))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "cocktail-card__cocktail-info"
+      className: "cocktail-card__info"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "cocktail-card__cocktail-name"
+      className: "cocktail-card__name"
     }, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "cocktail-card__cocktail_description"
+      className: "cocktail-card__description"
     }, short_description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-      className: "cocktail-card__cocktail-photo",
+      className: "cocktail-card__photo",
       src: photo,
       alt: ""
     }));
