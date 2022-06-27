@@ -4,10 +4,10 @@ const cocktails_list = [];
 const temp_list = [
     {
         id: 0,
-        name: "Blackberry",
+        name: "BlacKBerrY",
         alcohol: 30,
         type: "алкоГОль",
-        short_description: "Фруктовый напиток",
+        short_description: "ФруКТОВый напиток",
         photo: require('@images/cocktail_1_card.png')
     },{
         id: 1,
