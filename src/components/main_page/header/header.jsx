@@ -1,9 +1,10 @@
 import React from 'react';
-// import irlix_logo_svg from "./irlix_logo_svg";
+import logo_main_svg from '@icons/logo_main.svg';
 
 let styleName = (name) => styles[String(name)];
 
 const Header = function() {
+    console.log(logo_main_svg)
     return (
         <header className="header">
             <div className="header-left-container">
@@ -12,7 +13,7 @@ const Header = function() {
             </div>
             <div className="header-right-container">
                 <div className="header-right-container__logo">
-                    <img className="header-right-container__logo-image" src="icons/logo_main.svg" alt="" />
+                    <img className="header-right-container__logo-image" src={logo_main_svg} alt="" />
                 </div>
             </div>
         </header>

@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let mode = 'development';
 let target = 'web';
@@ -13,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const plugins = [
   new MiniCssExtractPlugin({
-    filename: mode === 'production' ? '[name].[contenthash].css' : '[name].css',
+    filename: mode === 'production' ? './styles/[name].[contenthash].css' : './styles/[name].css',
   }),
   new HtmlWebpackPlugin({
     template: './public/index.html',
@@ -22,8 +21,7 @@ const plugins = [
 
 if (process.env.SERVE) {
   plugins.push(
-      new ReactRefreshWebpackPlugin(),
-      new CleanWebpackPlugin()
+      new ReactRefreshWebpackPlugin()
   );
 }
 
@@ -52,7 +50,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[hash][ext][query]',
+    assetModuleFilename: 'assets/[name][hash][ext][query]',
     clean: true,
   },
 
@@ -67,10 +65,16 @@ module.exports = {
           'postcss-loader',
           'sass-loader',
         ],
+        generator: {
+          filename: "./styles/[name][ext]",
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
         type: mode === 'production' ? 'asset' : 'asset/resource',
+        generator: {
+          filename: "./images/[name][ext]",
+        }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
@@ -87,8 +91,8 @@ module.exports = {
           options: {
             cacheDirectory: true,
           },
-        },
-      },
+        }
+      }
     ],
   },
 };

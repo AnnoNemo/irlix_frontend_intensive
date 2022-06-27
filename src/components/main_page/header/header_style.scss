@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  top: 0;
+  background-color: $c_general_background;
+  min-width: 40rem;
+  width: 100%;
+  flex: 0 0 auto;
+  z-index: 5;
+
+  .header-left-container {
+    padding: 4rem;
+
+    .header-left-container__title {
+      font-weight: 700;
+      color: $c_highlight_text_color;
+      font-size: 3rem;
+      text-transform: capitalize;
+    }
+
+    .header-left-container__date-text {
+      margin-top: 1rem;
+      color: $c_default_text_color;
+      font-size: 18px;
+    }
+  }
+
+  .header-right-container {
+    .header-right-container__logo {
+      position: absolute;
+      width: 137px;
+      height: 127px;
+      top: 0;
+      right: 0;
+    }
+  }
+}
