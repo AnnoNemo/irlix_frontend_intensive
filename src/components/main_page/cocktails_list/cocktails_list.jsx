@@ -1,10 +1,12 @@
 import React from 'react';
+import cocktail_1_card from '@images/cocktail_1_card.png'
+import cocktail_2_card from '@images/cocktail_2_card.png'
 
 const CocktailsList = () => {
 
     const cocktail_list_array = [
         (
-            <aside className="cocktail-card">
+            <article className="cocktail-card">
                 <a className="cocktail-card__content-wrapper" href="#">
                     <div className="alcohol-percent-badge">
                         <div className="alcohol-percent-badge_wrapper">
@@ -17,10 +19,10 @@ const CocktailsList = () => {
                         <div className="cocktail-card__cocktail_description">Освежающий напиток</div>
                     </div>
                 </a>
-                <img className="cocktail-card__cocktail-photo" src="./images/cocktail_1_card.png" alt=""/>
-            </aside>
+                <img className="cocktail-card__cocktail-photo" src={cocktail_1_card} alt=""/>
+            </article>
         ),(
-            <aside className="cocktail-card">
+            <article className="cocktail-card">
                 <div className="cocktail-card__content-wrapper">
                     <div className="alcohol-percent-badge">
                         <div className="alcohol-percent-badge_wrapper">
@@ -33,8 +35,8 @@ const CocktailsList = () => {
                         <div className="cocktail-card__cocktail_description">Освежающий напиток</div>
                     </div>
                 </div>
-                <img className="cocktail-card__cocktail-photo" src="./images/cocktail_2_card.png" alt=""/>
-            </aside>
+                <img className="cocktail-card__cocktail-photo" src={cocktail_2_card} alt=""/>
+            </article>
         )
     ]
 

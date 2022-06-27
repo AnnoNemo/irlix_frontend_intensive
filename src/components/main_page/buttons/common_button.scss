@@ -1,0 +1,21 @@
+.common-button {
+  background-color: $c_common_button_back;
+  color: $c_common_button_text;
+  font-size: 2.25rem;
+  text-transform: capitalize;
+  padding: 2rem 3rem;
+  border-radius: 32rem;
+  transition-duration: 0.22s;
+  font-weight: 500;
+  @media (pointer: fine), (pointer: coarse) {
+    &:hover, &:focus {
+      background-color: $c_common_button_back_hover;
+      color: $c_common_button_text_hover;
+    }
+    &:active {
+      background-color: $c_common_button_back_active;
+      color: $c_common_button_text_active;
+      border: 1px solid $c_common_button_border_active;
+    }
+  }
+}
