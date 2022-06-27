@@ -1,22 +1,24 @@
 import React from 'react';
-import Header from "@components/app/header";
-import HeaderPlace from "@components/app/header_place";
-import QuickFiltersMenu from "@components/app/quick_filters_menu";
-import CocktailsList from "@components/app/cocktails_list";
-import Footer from "./app/footer";
-import FooterPlace from "@components/app/footer_place";
+import Header from "@components/main_page/header/header";
+import QuickFiltersMenu from "@components/main_page/cocktails_list/quick_filters_menu/quick_filters_menu";
+import CocktailsList from "@components/main_page/cocktails_list/cocktails_list";
+import Footer from "@components/main_page/footer/footer";
 
 const MainBlock = () => {
     return (
         <>
             <Header/>
-            <HeaderPlace />
             <main className="main-content">
+                <div className="header-place">
+                {/*  empty solid container for fixed header  */}
+                </div>
                 <QuickFiltersMenu />
                 <CocktailsList />
+                <div className="footer-place">
+                {/*  empty solid container for fixed footer  */}
+                </div>
             </main>
             <Footer />
-            <FooterPlace />
         </>
     );
 };

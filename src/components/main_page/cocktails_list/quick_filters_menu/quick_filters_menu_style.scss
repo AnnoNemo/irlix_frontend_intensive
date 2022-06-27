@@ -1,0 +1,46 @@
+.quick-filters-menu {
+  position: fixed;
+  top: 14rem;
+  left: 0;
+  flex: 0 0 auto;
+  background-color: $c_general_background;
+  width: 100%;
+  padding: {
+    top: 1rem;
+    right: 6rem;
+    bottom: 1rem;
+    left: 6rem;
+  };
+  z-index: 4;
+  overflow: auto;
+  &__list {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 3rem;
+    justify-content: center;
+    min-width: fit-content;
+  }
+  &__list-item {
+    padding: 10px 20px;
+    border: {
+      radius: 4rem;
+      width: 1px;
+      style: solid;
+      color: transparent;
+    }
+    transition-duration: 0.22s;
+  }
+  &__list-item-selector {
+    display: none;
+  }
+  &__list-item_active {
+    padding: 10px 20px;
+    color: $c_highlight_text_color;
+    border: {
+      radius: 4rem;
+      width: 1px;
+      style: solid;
+      color: $c_default_text_color;
+    }
+  }
+}

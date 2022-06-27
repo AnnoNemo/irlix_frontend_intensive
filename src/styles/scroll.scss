@@ -1,0 +1,35 @@
+/// Миксина для изменения внешнего вида скроллбара
+/// Работает не во всех браузерах
+/// @param {Length} $size - Высота горизонтального и скроллбара и ширина вертикального
+/// @param {Color} $foreground-color - Цвет скроллбара
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Цвет скроллбара
+/// @example scss - Стили скроллбара
+///   @include scrollbars(.5em, slategray);
+@mixin scrollbars($size, $foreground-color, $thumb_radius, $background-color: mix($foreground-color, white,  50%)) {
+  // Для Chrome
+  ::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: $thumb_radius;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // Для Firefox Mozilla
+  body {
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color:  $foreground-color $background-color;   /* scroll thumb and track */
+  }
+
+  // Для Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

@@ -2,7 +2,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let mode = 'development';
 let target = 'web';
@@ -22,8 +21,7 @@ const plugins = [
 
 if (process.env.SERVE) {
   plugins.push(
-      new ReactRefreshWebpackPlugin(),
-      new CleanWebpackPlugin()
+      new ReactRefreshWebpackPlugin()
   );
 }
 
@@ -52,7 +50,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[hash][ext][query]',
+    assetModuleFilename: 'assets/[name][hash][ext][query]',
     clean: true,
   },
 
@@ -93,11 +91,8 @@ module.exports = {
           options: {
             cacheDirectory: true,
           },
-        },
-        generator: {
-          filename: "./scripts/[name][ext]",
         }
-      },
+      }
     ],
   },
 };

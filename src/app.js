@@ -1,6 +1,6 @@
 import React from "react";
 import '@styles/main.scss';
-import MainPage from "./main_page/main_page";
+import MainPage from "@components/main_page/main_page";
 
 function App() {
 
