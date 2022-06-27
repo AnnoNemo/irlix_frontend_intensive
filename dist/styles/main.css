@@ -321,30 +321,30 @@ body {
 .main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .alcohol-percent-badge .alcohol-percent-badge__text:first-letter {
   text-transform: capitalize;
 }
-.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__cocktail-info {
+.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__info {
   position: absolute;
   margin-bottom: 3rem;
   margin-left: 4rem;
   bottom: 0;
 }
-.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__cocktail-info .cocktail-card__cocktail-name {
+.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__info .cocktail-card__name {
   font-size: 3rem;
   font-weight: 700;
   color: white;
 }
-.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__cocktail-info .cocktail-card__cocktail-name {
+.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__info .cocktail-card__name {
   text-transform: lowercase;
 }
-.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__cocktail-info .cocktail-card__cocktail-name:first-letter {
+.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__info .cocktail-card__name:first-letter {
   text-transform: capitalize;
 }
-.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__cocktail-info .cocktail-card__cocktail_description {
+.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__info .cocktail-card__description {
   text-transform: lowercase;
 }
-.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__cocktail-info .cocktail-card__cocktail_description:first-letter {
+.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__content-wrapper .cocktail-card__info .cocktail-card__description:first-letter {
   text-transform: capitalize;
 }
-.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__cocktail-photo {
+.main-content .container .cocktail-list-wrapper .cocktail-card .cocktail-card__photo {
   position: absolute;
   border-radius: inherit;
   width: 100%;
