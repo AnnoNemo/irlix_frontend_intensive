@@ -79,7 +79,7 @@
           }
         }
 
-        .cocktail-card__cocktail-info {
+        .cocktail-card__info {
           position: absolute;
           margin: {
             bottom: 3rem;
@@ -87,30 +87,30 @@
           };
           bottom: 0;
 
-          .cocktail-card__cocktail-name {
+          .cocktail-card__name {
             font: {
               size: 3rem;
               weight: 700;
             };
             color: $c_highlight_text_color;
           }
-          .cocktail-card__cocktail-name {
+          .cocktail-card__name {
             text-transform: lowercase;
           }
-          .cocktail-card__cocktail-name:first-letter{
+          .cocktail-card__name:first-letter{
             text-transform: capitalize;
           }
-          .cocktail-card__cocktail_description {
+          .cocktail-card__description {
             text-transform: lowercase;
           }
-          .cocktail-card__cocktail_description:first-letter {
+          .cocktail-card__description:first-letter {
             text-transform: capitalize;
           }
         }
       }
 
 
-      .cocktail-card__cocktail-photo {
+      .cocktail-card__photo {
         position: absolute;
         border-radius: inherit;
         width: 100%;

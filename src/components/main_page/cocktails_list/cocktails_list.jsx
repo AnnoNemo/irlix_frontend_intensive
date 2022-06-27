@@ -16,12 +16,12 @@ const CocktailsList = () => {
                                             <div className="alcohol-percent-badge__text">{type}</div>
                                         </div>
                                     </div>
-                                    <div className="cocktail-card__cocktail-info">
-                                        <div className="cocktail-card__cocktail-name">{name}</div>
-                                        <div className="cocktail-card__cocktail_description">{short_description}</div>
+                                    <div className="cocktail-card__info">
+                                        <div className="cocktail-card__name">{name}</div>
+                                        <div className="cocktail-card__description">{short_description}</div>
                                     </div>
                                 </a>
-                                <img className="cocktail-card__cocktail-photo" src={photo} alt=""/>
+                                <img className="cocktail-card__photo" src={photo} alt=""/>
                             </article>
                         )
                     }
