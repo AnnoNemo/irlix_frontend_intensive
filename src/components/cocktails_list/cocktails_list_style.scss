@@ -1,0 +1,178 @@
+.container {
+  margin-right: auto;
+  margin-left:auto;
+  padding-top: 12rem;
+  padding-bottom: 4rem;
+  width: 100%;
+
+    .cards-list {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 4rem;
+      justify-content: flex-start;
+
+      .cocktail-card {
+        //min-width: 40rem;
+        min-width: 28rem;
+        max-width: 45rem;
+        height: 52rem;
+        border-radius: 4rem;
+        overflow: hidden;
+        position: relative;
+        color: inherit;
+        flex: 1 1 calc(34% - 4rem);
+
+        & *, &:active, &:hover {
+          color: inherit;
+        }
+
+        .cocktail-card__content-wrapper {
+          border-radius: inherit;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          position: absolute;
+          background: linear-gradient(180deg, $c_card_line_gradient_end 48.96%, $c_card_line_gradient_start 89.58%);
+
+          .alcohol-percent-badge {
+            width: 10rem;
+            height: 10rem;
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background-color: $c_badge_background;
+            border-radius: 3rem;
+
+            .alcohol-percent-badge_wrapper{
+              height: inherit;
+              display: flex;
+              flex-flow: column nowrap;
+              border-radius: inherit;
+              margin: {
+                right: 1rem;
+              };
+              align-items: flex-end;
+              justify-content: center;
+            }
+
+            .alcohol-percent-badge__value {
+              font: {
+                size: 3rem;
+                weight: 700;
+              };
+              color: $c_highlight_text_color;
+              text-align: right;
+            }
+            .alcohol-percent-badge__text {
+              text-transform: lowercase;
+              font:{
+                size: 14px;
+              }
+              text-align: right;
+            }
+            .alcohol-percent-badge__text:first-letter {
+              text-transform: capitalize;
+            }
+          }
+
+          .cocktail-card__info {
+            position: absolute;
+            margin: {
+              bottom: 3rem;
+              left: 4rem;
+            };
+            bottom: 0;
+
+            .cocktail-card__name {
+              font: {
+                size: 3rem;
+                weight: 700;
+              };
+              color: $c_highlight_text_color;
+            }
+            .cocktail-card__name {
+              text-transform: lowercase;
+            }
+            .cocktail-card__name:first-letter{
+              text-transform: capitalize;
+            }
+            .cocktail-card__description {
+              text-transform: lowercase;
+            }
+            .cocktail-card__description:first-letter {
+              text-transform: capitalize;
+            }
+          }
+        }
+
+        .cocktail-card__photo {
+          position: absolute;
+          border-radius: inherit;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      .wrong-cocktail-card{
+        .cocktail-card__content-wrapper{
+          display: inline;
+        }
+      }
+
+      .empty-search-result {
+        width: 40rem;
+        height: 7rem;
+        padding: {
+          right: 6rem;
+          left: 6rem;
+        };
+        font: {
+          weight: normal;
+          size: 3rem;
+        }
+        color: $c_highlight_text_color;
+        text-align: center;
+      }
+
+    }
+}
+//
+//@media (max-width: 320px) {
+//  .container {
+//    max-width: inherit;
+//  }
+//
+//}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 45rem;
+  }
+
+}
+
+@media (min-width: 480px) {
+  .container {
+    max-width: 60rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: calc(60% + 4rem * 1);
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    max-width: calc(70% + 4rem * 2);
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: calc(80% + 4rem * 3);
+  }
+}

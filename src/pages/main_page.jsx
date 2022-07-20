@@ -9,14 +9,8 @@ const MainBlock = () => {
         <>
             <Header/>
             <main className="main-content">
-                <div className="header-place">
-                {/*  empty solid container for fixed header  */}
-                </div>
                 <QuickFiltersMenu />
                 <CocktailsList />
-                <div className="footer-place">
-                {/*  empty solid container for fixed footer  */}
-                </div>
             </main>
             <Footer />
         </>
