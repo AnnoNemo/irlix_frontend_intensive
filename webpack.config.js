@@ -12,10 +12,10 @@ if (process.env.NODE_ENV === 'production') {
 
 const plugins = [
   new MiniCssExtractPlugin({
-    filename: mode === 'production' ? './styles/[name].[contenthash].css' : './styles/[name].css',
+    filename: mode === 'production' ? 'styles/[name].[contenthash].css' : 'styles/[name].css',
   }),
   new HtmlWebpackPlugin({
-    template: './public/index.html',
+    template: 'public/index.html',
   }),
 ];
 
@@ -38,6 +38,7 @@ module.exports = {
       "@images"      : path.resolve(__dirname, "public/images"),
       "@icons"      : path.resolve(__dirname, "public/icons"),
       "@src"      : path.resolve(__dirname, "src/"),
+      "@pages": path.resolve(__dirname, "src/pages"),
       "@components": path.resolve(__dirname, "src/components"),
       "@styles"      : path.resolve(__dirname, "src/styles")
     } || {},
@@ -66,21 +67,21 @@ module.exports = {
           'sass-loader',
         ],
         generator: {
-          filename: "./styles/[name][ext]",
+          filename: "styles/[name][ext]",
         }
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
         type: mode === 'production' ? 'asset' : 'asset/resource',
         generator: {
-          filename: "./images/[name][ext]",
+          filename: "images/[name][ext]",
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: "./fonts/[name][ext]",
+          filename: "fonts/[name][ext]",
         }
       },
       {

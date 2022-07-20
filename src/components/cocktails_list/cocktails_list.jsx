@@ -1,5 +1,5 @@
 import React from 'react';
-import cocktails_list from "@components/main_page/cocktails_list/cocktails_item_list";
+import cocktails_list from "@components/cocktails_list/cocktails_item_list";
 import {Link} from "react-router-dom";
 
 const wrong_search_card = {
