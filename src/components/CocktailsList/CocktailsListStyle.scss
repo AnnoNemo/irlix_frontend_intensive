@@ -43,7 +43,7 @@
             background-color: $c_badge_background;
             border-radius: 3rem;
 
-            .alcohol-percent-badge_wrapper{
+            .alcohol-percent-badge__wrapper{
               height: inherit;
               display: flex;
               flex-flow: column nowrap;
@@ -115,12 +115,6 @@
         }
       }
 
-      .wrong-cocktail-card{
-        .cocktail-card__content-wrapper{
-          display: inline;
-        }
-      }
-
       .empty-search-result {
         width: 40rem;
         height: 7rem;
@@ -135,6 +129,9 @@
         color: $c_highlight_text_color;
         text-align: center;
       }
+
+      @import "WrongCocktailCard/WrongCocktailCardStyle";
+      @import "EmptySearchResult/EmptySearchResultStyle";
 
     }
 }

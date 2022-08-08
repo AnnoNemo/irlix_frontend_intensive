@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import filter_elements_list from '@components/cocktails_list/quick_filters_menu/quick_filters_menu_elements_list';
+import filter_elements_list from '@components/cocktails_list/QuickFiltersMenu/QuickFiltersMenuElementsList';
 
 const QuickFiltersMenu = () => {
     const [isChecked, setChecksList] = useState(
