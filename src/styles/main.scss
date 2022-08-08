@@ -9,7 +9,9 @@ html {
 }
 
 body {
+    min-width: 40rem;
     height: 100%;
+    overflow: auto;
     background-color: $c_general_background;
     color: $c_default_text_color;
     font: {
@@ -17,62 +19,28 @@ body {
         weight: 300;
         size: 18px;
     }
-    #root {
-        display: flex;
-        flex-flow: column nowrap;
-    }
 }
 
 @include scrollbars(1rem, $c_common_button_back, 2rem, transparent);
 
-@import "@components/main_page/header/header_style.scss";
+@import "@components/header/header_style.scss";
 
 .main-content {
-    flex: 1 0 auto;
     display: flex;
     flex-flow: column nowrap;
+    align-items: baseline;
 
-    .header-place {
-        height: 114px;
-    }
+    @import "@components/cocktails_list/quick_filters_menu/quick_filters_menu_style.scss";
+    @import "@components/cocktails_list/cocktails_list_style.scss";
 
-    @import "@components/main_page/cocktails_list/quick_filters_menu/quick_filters_menu_style.scss";
-
-    @import "@components/main_page/cocktails_list/cocktails_list_style.scss";
-
-    .footer-place {
-        height: 12rem;
-    }
 }
 
-@import "@components/main_page/footer/footer_style.scss";
+@import "@components/footer/footer_style.scss";
 
-@import "@components/main_page/buttons/common_button.scss";
-
-@media (min-width: 320px) and (max-width: 767px) {
-    .container {
-        max-width: 40rem;
-        //transition: width 0.5s ease-in-out, left 1s ease-in-out;
-    }
-    //.main-content .cocktail-card:nth-child(odd) {
-    //    transition: margin-right 0.5s ease-in-out, left 1s ease-in-out;
-    //}
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: calc(40rem * 2 + 4rem * 1);
-    }
-}
-
-@media (min-width: 1025px) {
-    .container {
-        max-width: calc(40rem * 3 + 4rem * 2);
-    }
-}
-
-@media (min-width: 1440px) {
-    .container {
-        max-width: calc(40rem * 4 + 4rem * 3);
-    }
-}
+@import "@components/buttons/common_button.scss";
+//
+//@media (min-width: 320px) and (max-width: 767px) {
+//    .container {
+//        max-width: 40rem;
+//    }
+//}

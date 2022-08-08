@@ -21,25 +21,26 @@
     min-width: fit-content;
   }
   &__list-item {
-    padding: 10px 20px;
+    align-self: center;
+    flex: 0 0 auto;
+    transition-duration: 0.22s;
     border: {
       radius: 4rem;
       width: 1px;
       style: solid;
       color: transparent;
     }
-    transition-duration: 0.22s;
+  }
+  &__list-item-text {
+    display: block;
+    padding: 10px 20px;
   }
   &__list-item-selector {
     display: none;
   }
   &__list-item_active {
-    padding: 10px 20px;
     color: $c_highlight_text_color;
     border: {
-      radius: 4rem;
-      width: 1px;
-      style: solid;
       color: $c_default_text_color;
     }
   }

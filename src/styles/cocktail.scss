@@ -1,0 +1,16 @@
+@import "pallete";
+
+.cocktail {
+  &__button-back {
+    margin: {
+      top: 5rem;
+      left: 5rem;
+    };
+    width: 8rem;
+    height: 8rem;
+    border-width: 0;
+    border-radius: 2rem;
+    color: $c_common_button_text;
+    background-color: $c_common_button_back;
+  }
+}

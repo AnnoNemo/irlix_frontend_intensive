@@ -1,12 +1,18 @@
 import React from "react";
 import '@styles/main.scss';
-import MainPage from "@components/main_page/main_page";
+import '@styles/cocktail.scss';
+import MainPage from "@pages/main_page";
+import {Route, Routes} from "react-router-dom";
+import {Cocktail} from "@pages/cocktail/cocktail";
 
 function App() {
 
     return (
         <>
-            <MainPage/>
+            <Routes>
+                <Route  path="/" element={<MainPage />} />
+                <Route path="cocktail/:id" element={<Cocktail />} />
+            </Routes>
         </>
     );
 }
