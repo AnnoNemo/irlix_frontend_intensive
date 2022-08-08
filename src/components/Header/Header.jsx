@@ -1,6 +1,6 @@
 import React from 'react';
-import Title from '@components/header/title';
-import Logo from '@components/header/logo';
+import Title from '@components/Header/Title';
+import Logo from '@components/Header/Logo';
 
 const Header = function() {
     return (
