@@ -1,5 +1,6 @@
 import React from 'react';
-import Title from '@components/Header/Title';
+// import Title from '@components/Header/Title';
+import {HeaderPageTitle} from "@src/containers/HeaderPageTitle";
 import Logo from '@components/Header/Logo';
 
 const Header = function() {
@@ -7,7 +8,7 @@ const Header = function() {
         <header className="header">
             <div className="header-wrapper">
                 <div className="header-left-container">
-                    <Title />
+                    <HeaderPageTitle />
                 </div>
                 <div className="header-right-container">
                     <Logo />

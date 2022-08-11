@@ -2,14 +2,15 @@ import React, {useMemo, useState} from 'react';
 import Header from '@components/Header/Header';
 import QuickFiltersMenu from '@components/CocktailsList/QuickFiltersMenu/QuickFiltersMenu';
 import CocktailsList from '@components/CocktailsList/CocktailsList';
-import Footer from '@components/Footer/Footer';
+// import Footer from '@components/Footer/Footer';
+import {FooterSelectorTitle} from "@src/containers/FooterSelectorTitle";
 
 export const SearchingInputText = React.createContext(
     {
         SearchingText: '',
         changeSearchingText: () => {}
     });
-export const HeaderPageTitle = React.createContext();
+// export const HeaderPageTitle = React.createContext();
 export const FinalCocktailsList = React.createContext(
     {
         CurrentCocktailsList: [],
@@ -31,7 +32,7 @@ export const Searching = React.createContext(
 
 const MainBlock = () => {
     const [SearchingText, changeSearchingText] = useState("");
-    const [CurrentTitle, changePageTitle] = useState("главная");
+    // const [CurrentTitle, changePageTitle] = useState("главная");
     const [CurrentCocktailsList, setCurrentList] = useState([]);
     const [SelectedFilter, setSelectedCategory] = useState("");
     const [CardSearch, setSearching] = useState(
@@ -45,10 +46,10 @@ const MainBlock = () => {
         () => ({SearchingText, changeSearchingText}),
         [SearchingText]
     )
-    const PageTitle = useMemo(
-        () => ({CurrentTitle, changePageTitle}),
-        [CurrentTitle]
-    )
+    // const PageTitle = useMemo(
+    //     () => ({CurrentTitle, changePageTitle}),
+    //     [CurrentTitle]
+    // )
     const InitialSearch = useMemo(
         () => ({CardSearch, setSearching}),
         [CardSearch]
@@ -64,7 +65,7 @@ const MainBlock = () => {
 
     return (
         <SearchingInputText.Provider value={SearchText} >
-        <HeaderPageTitle.Provider value={PageTitle} >
+        {/*<HeaderPageTitle.Provider value={PageTitle} >*/}
         <FinalCocktailsList.Provider value={SettedCocktailList} >
         <SelectedCategory.Provider value={CurrentSelectedFilter} >
         <Searching.Provider value={InitialSearch} >
@@ -74,12 +75,12 @@ const MainBlock = () => {
                     <QuickFiltersMenu />
                     <CocktailsList />
                 </main>
-                <Footer />
+                <FooterSelectorTitle />
             </>
         </Searching.Provider>
         </SelectedCategory.Provider>
         </FinalCocktailsList.Provider>
-        </HeaderPageTitle.Provider>
+        {/*</HeaderPageTitle.Provider>*/}
         </SearchingInputText.Provider>
     );
 };

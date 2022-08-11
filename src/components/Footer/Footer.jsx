@@ -1,8 +1,8 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {HeaderPageTitle, SearchingInputText, Searching} from '@pages/main';
 
-const Footer = () => {
-    const {CurrentTitle, changePageTitle} = useContext(HeaderPageTitle);
+const Footer = (mainTitle, searchTitle) => {
+    // const {CurrentTitle, changePageTitle} = useContext(HeaderPageTitle);
     const {SearchingText, changeSearchingText} = useContext(SearchingInputText);
     const {CardSearch, setSearching} = useContext(Searching);
     const [SearchCheckboxStatus, setSearchCheckboxStatus] = useState(false);
@@ -17,12 +17,14 @@ const Footer = () => {
             setSearchCheckboxStatus(true);
             changeSearchingText('');
             setSearching((other) => {return {...other, InProcess:true, NoCocktailCard:true, UnfindedName: false}});
-            changePageTitle("поИск");
+            // changePageTitle("поИск");
+            searchTitle;
         } else {
             setSearchCheckboxStatus(false);
             setSearching((other) => {return {...other, InProcess:false, NoCocktailCard:false, UnfindedName: false}});
             changeSearchingText('');
-            changePageTitle("гЛавная");
+            // changePageTitle("гЛавная");
+            mainTitle;
         }
     }
 
