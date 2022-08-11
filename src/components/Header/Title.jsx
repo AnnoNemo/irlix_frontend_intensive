@@ -1,8 +1,6 @@
 import React, {useContext} from 'react';
-import {HeaderPageTitle} from '@pages/main';
 
-const Title = () => {
-    const {CurrentTitle, changePageTitle} = useContext(HeaderPageTitle);
+const Title = ({CurrentTitle}) => {
     const InitDate = new Date();
     const CurrentDate = InitDate.toLocaleDateString('ru-RU',{year: 'numeric', month: 'long', day: 'numeric'}).replace(/ г./gi, "");
     return (
