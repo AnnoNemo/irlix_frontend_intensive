@@ -40,6 +40,7 @@ module.exports = {
       "@src"      : path.resolve(__dirname, "src/"),
       "@pages": path.resolve(__dirname, "src/pages"),
       "@components": path.resolve(__dirname, "src/components"),
+      "@utils": path.resolve(__dirname, "src/utils"),
       "@styles"      : path.resolve(__dirname, "src/styles")
     } || {},
     extensions: ['.js', '.jsx', '.css', '.scss', '.jpeg', '.png', '.svg']

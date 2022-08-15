@@ -1,34 +1,37 @@
-import React, {useState} from 'react';
-import filter_elements_list from '@components/cocktails_list/QuickFiltersMenu/QuickFiltersMenuElementsList';
+import React, {useContext, useState} from 'react';
+import filter_elements_list from '@components/CocktailsList/QuickFiltersMenu/QuickFiltersMenuElementsList';
+import {SelectedCategory} from "@pages/main";
 
 const QuickFiltersMenu = () => {
-    const [isChecked, setChecksList] = useState(
-        new Array(filter_elements_list.length).fill(false)
-    );
+    const {SelectedFilter, setSelectedCategory} = useContext(SelectedCategory);
 
     const setCheckStatus = (element, index) => {
-        const new_list = isChecked.map(
-            function(value, position) {
-                if (position === index) {
-                    return !value;
-                } else {
-                    return value;
-                }
-            }
-        )
+        const ELEMENT = element.target;
         // find the parent li, to change his class
-        let parent_target = element.target.closest(
+        const PARENT_ELEMENT = ELEMENT.closest(
             '.quick-filters-menu__list-item'
         );
-        switch (new_list[index]) {
-            case true:
-                parent_target.className = parent_target.className.concat(" ", "quick-filters-menu__list-item_active");
-                break;
-            case false:
-                parent_target.className = "quick-filters-menu__list-item";
-                break;
-        }
-        setChecksList(new_list)
+        document.querySelectorAll('.quick-filters-menu__list-item-selector').forEach(
+            (item, key) => {
+                if (item.name !== ELEMENT.name) {
+                    item.checked = false;
+                    item.closest(
+                        '.quick-filters-menu__list-item'
+                    ).className = "quick-filters-menu__list-item";
+                } else {
+                    switch (ELEMENT.checked) {
+                        case true:
+                            PARENT_ELEMENT.className = PARENT_ELEMENT.className.concat(" ", "quick-filters-menu__list-item_active");
+                            setSelectedCategory(ELEMENT.value);
+                            break;
+                        case false:
+                            PARENT_ELEMENT.className = "quick-filters-menu__list-item";
+                            setSelectedCategory('');
+                            break;
+                    }
+                }
+            }
+        );
     };
 
     return (
@@ -40,7 +43,7 @@ const QuickFiltersMenu = () => {
                             return (
                                 <li
                                     className="quick-filters-menu__list-item"
-                                    key={index.toString()}
+                                    key={index}
                                 >
                                     <label
                                         className="quick-filters-menu__list-item-text"
@@ -49,8 +52,8 @@ const QuickFiltersMenu = () => {
                                             type="checkbox"
                                             className='quick-filters-menu__list-item-selector'
                                             onChange={(element)=> setCheckStatus(element, index)}
-                                            checked={isChecked[index]}
-                                            name=""
+                                            name={`category_quick_filter_${index}`}
+                                            value={name}
                                         />
                                         {name}
                                     </label>

@@ -23,21 +23,20 @@ body {
 
 @include scrollbars(1rem, $c_common_button_back, 2rem, transparent);
 
-@import "@components/header/header_style.scss";
+@import "@components/Header/HeaderStyle.scss";
 
 .main-content {
     display: flex;
     flex-flow: column nowrap;
     align-items: baseline;
 
-    @import "@components/cocktails_list/quick_filters_menu/quick_filters_menu_style.scss";
-    @import "@components/cocktails_list/cocktails_list_style.scss";
+    @import "@components/CocktailsList/QuickFiltersMenu/QuickFiltersMenuStyle.scss";
+    @import "@components/CocktailsList/CocktailsListStyle.scss";
 
 }
 
-@import "@components/footer/footer_style.scss";
+@import "@components/Footer/FooterStyle.scss";
 
-@import "@components/buttons/common_button.scss";
 //
 //@media (min-width: 320px) and (max-width: 767px) {
 //    .container {

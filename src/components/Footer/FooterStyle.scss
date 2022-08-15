@@ -10,6 +10,26 @@
     border-top-left-radius: 4rem;
     z-index: 5;
     background-color: $c_footer_background;
+
+    @import "@styles/common_button.scss";
+    .search {
+      &__field {
+        background-color: $c_common_button_back;
+        color: $c_common_button_text;
+        font-size: 2.25rem;
+        padding: 2rem 3rem;
+        border-radius: 32rem;
+        transition-duration: 0.22s;
+        font-weight: 400;
+        border: {
+          width: 0;
+        }
+      }
+      &__status:checked+&__button {
+        position: absolute;
+        background-color: blue;
+      }
+    }
   }
   .footer-place {
     height: 12rem;

@@ -1,11 +1,40 @@
-import React from 'react';
+import React, {useState, useContext, useEffect} from 'react';
+import {HeaderPageTitle, SearchingInputText, Searching} from '@pages/main';
 
 const Footer = () => {
+    const {CurrentTitle, changePageTitle} = useContext(HeaderPageTitle);
+    const {SearchingText, changeSearchingText} = useContext(SearchingInputText);
+    const {CardSearch, setSearching} = useContext(Searching);
+    const [SearchCheckboxStatus, setSearchCheckboxStatus] = useState(false);
+
+    function searching(event) {
+        changeSearchingText(event.target.value);
+    }
+
+    function openSearch() {
+        // TODO Сделать нормальную обработку инициализации поиска
+        if (!SearchCheckboxStatus){
+            setSearchCheckboxStatus(true);
+            changeSearchingText('');
+            setSearching((other) => {return {...other, InProcess:true, NoCocktailCard:true, UnfindedName: false}});
+            changePageTitle("поИск");
+        } else {
+            setSearchCheckboxStatus(false);
+            setSearching((other) => {return {...other, InProcess:false, NoCocktailCard:false, UnfindedName: false}});
+            changeSearchingText('');
+            changePageTitle("гЛавная");
+        }
+    }
+
     return (
         <footer className="footer">
             <div className="footer-wrapper">
-                <div className="button_wraper">
-                    <button type={"button"} className={"common-button"}>поиск</button>
+                <div className="search">
+                    <label className="search-wrapper">
+                        <input type="text" onChange={searching} hidden={!SearchCheckboxStatus} placeholder={'Маргарита'} value={SearchingText} className="search__field" />
+                        <input type="checkbox" hidden={true} checked={SearchCheckboxStatus} name="search_input_show" className="search__status" />
+                        <button type={"button"} onClick={openSearch} className="common-button search__button">поиск</button>
+                    </label>
                 </div>
             </div>
             <div className="footer-place">

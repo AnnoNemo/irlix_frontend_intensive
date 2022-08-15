@@ -1,0 +1,15 @@
+.wrong-cocktail-card{
+  .cocktail-card__content-wrapper{
+    display: inline;
+  }
+  &__header-text {
+    margin: {
+      top: 5rem;
+    };
+    font: {
+      weight: 400;
+      size: 3rem;
+    }
+    text-align: center;
+  }
+}
