@@ -65,19 +65,25 @@ const CocktailsList = () => {
         const LENGTH_SEARCH_STRING = SearchText.length;
         const IS_FILTER_SET = filter.length > 0;
         let FoundCardQuantity = 0;
+        console.log(filter)
 
         if (search.InProcess === false) { // Фильтрация категории без поиска
-            if (IS_FILTER_SET && CurrentCocktailsList.length > 0) {
-                const TEMP_LIST = filteringCardsByCategory(array, filter);
-                FoundCardQuantity = TEMP_LIST.length;
+            const TEMP_LIST = filteringCardsByCategory(array, filter);
+            FoundCardQuantity = TEMP_LIST.length;
+            if (IS_FILTER_SET && FoundCardQuantity > 0) {
+                setSearching((other) => {
+                    return {...other, NoCocktailCard: false, UnfindedName: false}
+                });
                 setCurrentList(
                     TEMP_LIST
                 );
-                if (FoundCardQuantity < 1) {
-                    setSearching((other) => {
-                        return {...other, NoCocktailCard: false, UnfindedName: true}
-                    });
-                }
+            } else if (IS_FILTER_SET && FoundCardQuantity < 1) {
+                setSearching((other) => {
+                    return {...other, NoCocktailCard: false, UnfindedName: true}
+                });
+                setCurrentList(
+                    []
+                );
             } else if (!IS_FILTER_SET) {
                 setSearching((other) => {
                     return {...other, NoCocktailCard: false, UnfindedName: false}
