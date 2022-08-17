@@ -11,7 +11,6 @@ const Footer = ({mainTitle, searchTitle}) => {
     }
 
     function openSearch() {
-        // TODO Сделать нормальную обработку инициализации поиска
         if (!SearchCheckboxStatus){
             setSearchCheckboxStatus(true);
             changeSearchingText('');

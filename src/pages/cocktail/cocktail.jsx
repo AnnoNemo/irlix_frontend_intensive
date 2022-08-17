@@ -1,29 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import URL_API from '@utils/api/urls';
-import API, {getCocktail} from '@utils/api/methods';
+import API from '@utils/api/methods';
+
+
+const  getCurrentCocktail = async (id) => {
+    return await API.getCocktail(URL_API.GET_COCKTAILS, id);
+}
 
 export const Cocktail = () => {
     const {id}  = useParams();
-    const COCKTAIL_ID = Number({id}.id);
     const navigate = useNavigate();
     const [CurrentCocktail, setCocktail] = useState();
     const goBack = () => navigate(-1);
 
-    const  getCurrentCocktail = async () => {
-        return await getCocktail(URL_API.GET_COCKTAILS, 0);
-    }
-
+ console.log("zap");
     useEffect(
          () => {
-             getCurrentCocktail().then((data) => {
-                 setCocktail(data)
-             });
-
-        }, []
+             if (id) {
+                 getCurrentCocktail(id).then((data) => {
+                     setCocktail(data)
+                 });
+             }
+        }, [id]
     );
     if (!CurrentCocktail) {
-        return <>not found</>
+        return <main>Loading...</main>
     } else {
         return (
             <main className="cocktail">

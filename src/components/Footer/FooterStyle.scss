@@ -25,9 +25,17 @@
           width: 0;
         }
       }
-      &__status:checked+&__button {
-        position: absolute;
-        background-color: blue;
+      &__field:enabled {
+
+        width: 100%;
+      }
+      &__status:checked {
+        + .search__button {
+          position: absolute;
+          width: 7rem;
+          right: 22px;
+          border: 1px solid cyan;
+        }
       }
     }
   }
