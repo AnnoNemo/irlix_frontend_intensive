@@ -9,7 +9,6 @@ export const SearchingInputText = React.createContext(
         SearchingText: '',
         changeSearchingText: () => {}
     });
-// export const HeaderPageTitle = React.createContext();
 export const FinalCocktailsList = React.createContext(
     {
         CurrentCocktailsList: [],

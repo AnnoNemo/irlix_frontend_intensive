@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useState, memo} from 'react';
 import URL_API from '@utils/api/urls';
 import API from '@utils/api/methods';
 import UnfindedCocktailCard from '@components/CocktailsList/UnfindedCocktailCard/UnfindedCocktailCard';
@@ -6,7 +6,7 @@ import EmptySearchResult from '@components/CocktailsList/EmptySearchResult/Empty
 import CocktailCard from '@components/CocktailsList/CocktailCard/CocktailCard';
 import {SearchingInputText, FinalCocktailsList, SelectedCategory, Searching} from '@pages/main';
 
-const CocktailsList = () => {
+const CocktailsList = memo(() => {
 
     const [CocktailsList, setCocktailsList] = useState([]);
     const {SearchingText, changeSearchingText} = useContext(SearchingInputText);
@@ -152,6 +152,6 @@ const CocktailsList = () => {
                 </div>
             </>
     );
-};
+});
 
 export default CocktailsList;

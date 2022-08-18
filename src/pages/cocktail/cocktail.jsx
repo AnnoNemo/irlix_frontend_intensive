@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, memo} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import URL_API from '@utils/api/urls';
 import API from '@utils/api/methods';
@@ -8,13 +8,12 @@ const  getCurrentCocktail = async (id) => {
     return await API.getCocktail(URL_API.GET_COCKTAILS, id);
 }
 
-export const Cocktail = () => {
+export const Cocktail = memo( () => {
     const {id}  = useParams();
     const navigate = useNavigate();
     const [CurrentCocktail, setCocktail] = useState();
     const goBack = () => navigate(-1);
 
- console.log("zap");
     useEffect(
          () => {
              if (id) {
@@ -35,4 +34,4 @@ export const Cocktail = () => {
             </main>
         );
     }
-};
+});
