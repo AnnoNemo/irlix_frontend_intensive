@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {HeaderPageTitle} from "@src/containers/HeaderPageTitle";
 import Logo from '@components/Header/Logo';
 
-const Header = function() {
+const Header = memo(function() {
     return (
         <header className="header">
             <div className="header-wrapper">
@@ -18,6 +18,6 @@ const Header = function() {
             </div>
         </header>
     );
-};
+});
 
 export default Header;

@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
+import React, {useContext, memo} from 'react';
 import {Link} from 'react-router-dom';
 import {FinalCocktailsList} from '@pages/main';
 
-const CocktailCard = () => {
+const CocktailCard = memo(() => {
 
     const {CurrentCocktailsList} = useContext(FinalCocktailsList);
     if (CurrentCocktailsList.length < 1) {
@@ -32,6 +32,6 @@ const CocktailCard = () => {
             }
         </>
     )
-}
+});
 
 export default CocktailCard;

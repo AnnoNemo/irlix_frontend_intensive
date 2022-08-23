@@ -13,7 +13,7 @@ class API {
         }
         return LIST;
     }
-    async getCocktail(url, id) {
+    static async getCocktail(url, id) {
         const COCKTAIL = {};
         try {
             const RESPONSE = await fetch(`${url}/${id}`);

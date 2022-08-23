@@ -1,30 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, memo} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import URL_API from '@utils/api/urls';
 import API from '@utils/api/methods';
 
-const Cocktail = () => {
+
+const  getCurrentCocktail = async (id) => {
+    return await API.getCocktail(URL_API.GET_COCKTAILS, id);
+}
+
+export const Cocktail = memo( () => {
     const {id}  = useParams();
-    const COCKTAIL_ID = Number({id}.id);
     const navigate = useNavigate();
     const [CurrentCocktail, setCocktail] = useState();
     const goBack = () => navigate(-1);
 
-
-    function getCocktail() {
-        const COCKTAIL = API.getCocktail(URL_API.GET_COCKTAILS, COCKTAIL_ID);
-        return COCKTAIL;
-    }
-
     useEffect(
          () => {
-             setCocktail(
-                getCocktail()
-             )
-        }, []
+             if (id) {
+                 getCurrentCocktail(id).then((data) => {
+                     setCocktail(data)
+                 });
+             }
+        }, [id]
     );
-    if (CurrentCocktail === undefined) {
-        return null;
+    if (!CurrentCocktail) {
+        return <main>Loading...</main>
     } else {
         return (
             <main className="cocktail">
@@ -34,6 +34,4 @@ const Cocktail = () => {
             </main>
         );
     }
-};
-
-export {Cocktail};
+});
