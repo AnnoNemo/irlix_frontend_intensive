@@ -1,10 +1,9 @@
 import React, {useState, useContext, memo} from 'react';
-import {SearchingInputText, Searching} from '@pages/main';
+import {SearchingInputText, Searching} from '@pages/main/main';
 
-const Footer = memo(({mainTitle, searchTitle}) => {
+export const Footer = memo(({setMainTitle, setSearchTitle}) => {
     const {SearchingText, changeSearchingText} = useContext(SearchingInputText);
     const {CardSearch, setSearching} = useContext(Searching);
-    const [ButtonText, setButtonText] = useState("поиск");
     const [SearchCheckboxStatus, setSearchCheckboxStatus] = useState(false);
 
     function searching(event) {
@@ -14,16 +13,14 @@ const Footer = memo(({mainTitle, searchTitle}) => {
     function openSearch() {
         if (!SearchCheckboxStatus){
             setSearchCheckboxStatus(true);
-            setButtonText(' ');
             changeSearchingText('');
             setSearching((other) => {return {...other, InProcess:true, NoCocktailCard:true, UnfindedName: false}});
-            searchTitle();
+            setSearchTitle();
         } else {
             setSearchCheckboxStatus(false);
             setSearching((other) => {return {...other, InProcess:false, NoCocktailCard:false, UnfindedName: false}});
-            setButtonText("поиск");
             changeSearchingText('');
-            mainTitle();
+            setMainTitle();
         }
     }
 
@@ -33,8 +30,9 @@ const Footer = memo(({mainTitle, searchTitle}) => {
                 <div className="search">
                     <label className="search-wrapper">
                         <input type="text" onChange={searching} hidden={!SearchCheckboxStatus} placeholder={'Маргарита'} value={SearchingText} className="search__field" />
+                        <input type="image" onClick={openSearch} hidden={!SearchCheckboxStatus} src={require('@icons/search_magnify.svg')} alt="Close search button" className="search__close" />
                         <input type="checkbox" hidden={true} checked={SearchCheckboxStatus} name="search_input_show" className="search__status" />
-                        <button type={"button"} onClick={openSearch} className="common-button search__button">{ButtonText}</button>
+                        <button type="button" onClick={openSearch} hidden={SearchCheckboxStatus} className="common-button search__button">поиск</button>
                     </label>
                 </div>
             </div>
@@ -44,5 +42,3 @@ const Footer = memo(({mainTitle, searchTitle}) => {
         </footer>
     );
 });
-
-export default Footer;

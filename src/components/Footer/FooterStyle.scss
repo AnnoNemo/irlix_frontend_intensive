@@ -13,9 +13,12 @@
 
     @import "@styles/common_button.scss";
     .search {
+      position: relative;
+
       &__field {
         background-color: $c_common_button_back;
         color: $c_common_button_text;
+        height: 6rem;
         font-size: 2.25rem;
         padding: 2rem 3rem;
         border-radius: 32rem;
@@ -31,13 +34,14 @@
       &__field:focus {
         outline: none;
       }
-      &__status:checked {
-        + .search__button {
-          position: absolute;
-          width: 7rem;
-          right: 22px;
-          background-color: $c_common_button_border_active;
-        }
+      &__close:enabled {
+        position: absolute;
+        border-radius: 4rem;
+        height: 6rem;
+        width: 6rem;
+        right: 0;
+        padding: 11px;
+        background-color: grey;
       }
     }
   }

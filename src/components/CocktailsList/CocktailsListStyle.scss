@@ -130,8 +130,8 @@
         text-align: center;
       }
 
-      @import "UnfindedCocktailCard/UnfindedCocktailCardStyle";
-      @import "EmptySearchResult/EmptySearchResultStyle";
+      @import "src/components/UnfindedCocktailCard/UnfindedCocktailCardStyle";
+      @import "src/components/EmptySearchResult/EmptySearchResultStyle";
 
     }
 }
