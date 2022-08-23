@@ -1,8 +1,8 @@
 import React, {useMemo, useState} from 'react';
-import Header from '@components/Header/Header';
-import QuickFiltersMenu from '@components/CocktailsList/QuickFiltersMenu/QuickFiltersMenu';
-import CocktailsList from '@components/CocktailsList/CocktailsList';
-import {FooterSelectorTitle} from "@src/containers/FooterSelectorTitle";
+import {Header} from '@components/Header';
+import {QuickFiltersMenu} from '@components/QuickFiltersMenu';
+import {CocktailsList} from '@components/CocktailsList';
+import {FooterSelectorTitle as Footer} from "@src/containers/FooterSelectorTitle";
 
 export const SearchingInputText = React.createContext(
     {
@@ -28,7 +28,7 @@ export const Searching = React.createContext(
     }
 );
 
-const MainBlock = () => {
+export const Main = () => {
     const [SearchingText, changeSearchingText] = useState("");
     const [CurrentCocktailsList, setCurrentList] = useState([]);
     const [SelectedFilter, setSelectedCategory] = useState("");
@@ -68,7 +68,7 @@ const MainBlock = () => {
                     <QuickFiltersMenu />
                     <CocktailsList />
                 </main>
-                <FooterSelectorTitle />
+                <Footer />
             </>
         </Searching.Provider>
         </SelectedCategory.Provider>
@@ -77,5 +77,3 @@ const MainBlock = () => {
         </SearchingInputText.Provider>
     );
 };
-
-export default MainBlock;

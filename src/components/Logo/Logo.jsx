@@ -1,7 +1,7 @@
 import React from 'react';
 import logo_main_svg from '@icons/logo_main';
 
-const Logo = () => {
+export const Logo = () => {
     return (
         <div>
             <div className="header-right-container__logo">
@@ -10,5 +10,3 @@ const Logo = () => {
         </div>
     );
 };
-
-export default Logo;

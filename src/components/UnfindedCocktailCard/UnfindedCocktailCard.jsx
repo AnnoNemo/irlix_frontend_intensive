@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import {Searching} from '@pages/main';
+import {Searching} from '@pages/main/main';
 
-const UnfindedCocktailCard = () => {
+export const UnfindedCocktailCard = () => {
 
     const {CardSearch, setSearching} = useContext(Searching);
 
@@ -31,5 +31,3 @@ const UnfindedCocktailCard = () => {
         </article>
     );
 };
-
-export default UnfindedCocktailCard;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Title from "@components/Header/Title";
+import { Title } from "@components/Title";
 import {
     selectPageTitle,
 } from '@src/store/reducers/pageTitleSlice';

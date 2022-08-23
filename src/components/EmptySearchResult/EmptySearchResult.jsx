@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import {Searching} from "@pages/main";
+import {Searching} from "@pages/main/main";
 
-const EmptySearchResult = () => {
+export const EmptySearchResult = () => {
 
 
     const {CardSearch} = useContext(Searching);
@@ -14,5 +14,3 @@ const EmptySearchResult = () => {
         </article>
     );
 };
-
-export default EmptySearchResult;

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 
-const Title = ({CurrentTitle}) => {
+export const Title = ({CurrentTitle}) => {
     const InitDate = new Date();
     const CurrentDate = InitDate.toLocaleDateString('ru-RU',{year: 'numeric', month: 'long', day: 'numeric'}).replace(/ г./gi, "");
     return (
@@ -10,5 +10,3 @@ const Title = ({CurrentTitle}) => {
         </>
     );
 };
-
-export default Title;

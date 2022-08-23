@@ -1,18 +1,14 @@
 import React, {useContext, memo} from 'react';
 import {Link} from 'react-router-dom';
-import {FinalCocktailsList} from '@pages/main';
+import {FinalCocktailsList} from '@pages/main/main';
 
-const CocktailCard = memo(() => {
+export const CocktailCard = memo(({cocktailList}) => {
 
-    const {CurrentCocktailsList} = useContext(FinalCocktailsList);
-    if (CurrentCocktailsList.length < 1) {
-        return null;
-    }
     return (
         <>
             {
-                CurrentCocktailsList.map(({id, name, alcohol, type, short_description, photo}, index) =>
-                    <article className="cocktail-card" key={index.toString()}>
+                cocktailList.map(({id, name, alcohol, type, short_description, photo}, index) =>
+                    <article className="cocktail-card" key={id}>
                         <Link className="cocktail-card__content-wrapper" to={`/cocktail/${id}`}>
                             <div className="alcohol-percent-badge">
                                 <div className="alcohol-percent-badge__wrapper">
@@ -33,5 +29,3 @@ const CocktailCard = memo(() => {
         </>
     )
 });
-
-export default CocktailCard;

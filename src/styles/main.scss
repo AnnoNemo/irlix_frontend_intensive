@@ -30,7 +30,7 @@ body {
     flex-flow: column nowrap;
     align-items: baseline;
 
-    @import "@components/CocktailsList/QuickFiltersMenu/QuickFiltersMenuStyle.scss";
+    @import "@components/QuickFiltersMenu/QuickFiltersMenuStyle.scss";
     @import "@components/CocktailsList/CocktailsListStyle.scss";
 
 }

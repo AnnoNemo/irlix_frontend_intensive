@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
-import filter_elements_list from '@components/CocktailsList/QuickFiltersMenu/QuickFiltersMenuElementsList';
+import filter_elements_list from '@components/QuickFiltersMenu/QuickFiltersMenuElementsList';
 import {SelectedCategory} from "@pages/main";
 
-const QuickFiltersMenu = () => {
+export const QuickFiltersMenu = () => {
     const {SelectedFilter, setSelectedCategory} = useContext(SelectedCategory);
 
     const setCheckStatus = (element, index) => {
@@ -66,5 +66,3 @@ const QuickFiltersMenu = () => {
         </div>
     );
 };
-
-export default QuickFiltersMenu;

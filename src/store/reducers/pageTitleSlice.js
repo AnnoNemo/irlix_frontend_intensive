@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TITLES } from '@utils/constants';
+import { TITLES, } from '@utils/constants';
 
 const initialState = {
-    value: "главная",
+    value: TITLES.main,
 };
 
 export const pageTitleSlice = createSlice({
