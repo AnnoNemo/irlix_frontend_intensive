@@ -422,6 +422,7 @@ body {
   background-color: #44414E;
   color: #C4C1CF;
   font-size: 2.25rem;
+  height: 6rem;
   text-transform: capitalize;
   padding: 2rem 3rem;
   border-radius: 32rem;
@@ -439,9 +440,13 @@ body {
     border: 1px solid #FF005C;
   }
 }
+.footer .footer-wrapper .search {
+  position: relative;
+}
 .footer .footer-wrapper .search__field {
   background-color: #44414E;
   color: #C4C1CF;
+  height: 6rem;
   font-size: 2.25rem;
   padding: 2rem 3rem;
   border-radius: 32rem;
@@ -449,9 +454,20 @@ body {
   font-weight: 400;
   border-width: 0;
 }
-.footer .footer-wrapper .search__status:checked + .footer .footer-wrapper .search__button {
+.footer .footer-wrapper .search__field:enabled {
+  width: 100%;
+}
+.footer .footer-wrapper .search__field:focus {
+  outline: none;
+}
+.footer .footer-wrapper .search__close:enabled {
   position: absolute;
-  background-color: blue;
+  border-radius: 4rem;
+  height: 6rem;
+  width: 6rem;
+  right: 0;
+  padding: 11px;
+  background-color: grey;
 }
 .footer .footer-place {
   height: 12rem;
