@@ -1,16 +1,94 @@
 @import "pallete";
 
 .cocktail {
-  &__button-back {
+  text-transform: lowercase;
+  width: 100%;
+  height: 100%;
+  & * {
+    line-height: 3rem;
+  }
+  & *:first-letter{
+    text-transform: capitalize;
+  }
+  .container {
+    max-width: 77rem;
+    min-width: 40rem;
+    width: 100%;
+    height: 100%;
     margin: {
-      top: 5rem;
-      left: 5rem;
-    };
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: auto;
+    }
+  }
+  .top-wrapper {
+    position: relative;
+  }
+  &__button-back {
+    top: 4rem;
+    left: 4rem;
+    position: absolute;
     width: 8rem;
     height: 8rem;
+    padding: 3rem;
     border-width: 0;
     border-radius: 2rem;
+    outline: none;
     color: $c_common_button_text;
     background-color: $c_common_button_back;
+  }
+  &__image {
+    border-radius: 2rem;
+    width: 100%;
+  }
+  .bottom-wrapper {
+    padding: 4rem;
+  }
+  .cocktail-title {
+    padding-bottom: 4rem;
+
+    &__name {
+      font: {
+        size: 3rem;
+        weight: 700;
+      }
+    }
+  }
+  .ingridients-list {
+    white-space: nowrap;
+    padding-bottom: 4rem;
+
+    &__title {
+      font: {
+        weight: 700;
+      }
+      padding-bottom: 1rem;
+    }
+    .ingridient-item {
+      display: flex;
+      flex-flow: row nowrap;
+
+      &__dotted-line {
+        border-bottom: 2px dotted $c_default_text_color;
+        margin-bottom: 6px;
+        flex-grow: 1;
+        display: inline-block;
+      }
+    }
+  }
+  .recipe-list {
+    padding-bottom: 4rem;
+    &__title {
+      font: {
+        weight: 700;
+      }
+      padding-bottom: 1rem;
+    }
+  }
+  &__ingridient-list-title {
+    font: {
+      weight: 700;
+    }
   }
 }

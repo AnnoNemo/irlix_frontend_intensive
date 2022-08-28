@@ -1,59 +1,27 @@
-import React, {useContext, useEffect, useState, memo} from 'react';
-import URL_API from '@utils/api/urls';
-import API from '@utils/api/methods';
+import React from 'react';
 import {CocktailCard} from '@components/CocktailCard';
-import {EmptySearchResult} from '@components/EmptySearchResult';
-import {UnfindedCocktailCard} from '@components/UnfindedCocktailCard';
-import {SearchingInputText, FinalCocktailsList, SelectedCategory, Searching} from '@pages/main/main';
-import {CATEGORY_LIST} from "@components/QuickFiltersMenu/QuickFiltersMenuElementsList";
+import {Loader} from '@components/Loader';
+import {STATUS} from "@utils/constants";
 
-const getCocktails = async () => {
-    return  await API.getListFromServer(URL_API.GET_COCKTAILS);
-}
+export const CocktailsList = ({
+    status,
+    list
+}) => {
 
-const getFilteredCocktailsByCategory = (cocktailList, category) => {
-    if (category) {
-        return cocktailList.filter(cocktail => cocktail.category.includes(category) )
-    } else {
-        return cocktailList
+    const cocktailsListMapper = {
+        [STATUS.idle]: () =>  <CocktailCard cocktailList={list} />,
+        [STATUS.loading]: () => <Loader />,
+        [STATUS.fulfilled]: () => <CocktailCard cocktailList={list} />,
+        [STATUS.rejected]: () => <div><h4 style={{color: 'red'}}>Guru Meditation Error: Can't take cocktails from server, something goes wrong. We work on it.</h4></div>,
     }
-}
-
-const getCocktailsBySearchValue = (cocktailList, searchValue) => cocktailList.filter((cocktail) => cocktail.name.toLowerCase().includes(searchValue.toLowerCase()))
-
-
-export const CocktailsList = memo(() => {
-
-    const [CocktailsList, setCocktailsList] = useState([]);
-    const {SearchingText, changeSearchingText} = useContext(SearchingInputText);
-    const {CurrentCocktailsList, setCurrentList} = useContext(FinalCocktailsList);
-    const {SelectedFilter, setSelectedCategory} = useContext(SelectedCategory);
-    const {CardSearch, setSearching} = useContext(Searching);
-
-
-    useEffect(
-          () => {
-            getCocktails().then((data) => {
-                setCocktailsList(data);
-            });
-
-        }, []
-    )
-
-    const CocktailListByCategory  = getFilteredCocktailsByCategory(CocktailsList, SelectedFilter)
-    const getFilteredCocktailList = getCocktailsBySearchValue(CocktailListByCategory, SearchingText)
-
 
     return (
             <>
                 <div className="container">
                     <div className="cards-list">
-
-                        {<CocktailCard cocktailList={getFilteredCocktailList} />}
-                        {<EmptySearchResult />}
-                        {<UnfindedCocktailCard />}
+                        {cocktailsListMapper[status]()}
                     </div>
                 </div>
             </>
     );
-});
+};

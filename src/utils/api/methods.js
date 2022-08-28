@@ -8,8 +8,7 @@ class API {
             LIST.push(...COPY);
         } catch (error) {
             const MESSAGE = error.message;
-            console.error(MESSAGE);
-            alert(MESSAGE);
+            console.error("Error: Can`t get cocktails list from server: ",MESSAGE);
         }
         return LIST;
     }
@@ -22,8 +21,7 @@ class API {
             Object.assign(COCKTAIL, COPY);
         } catch (error) {
             const MESSAGE = error.message;
-            console.error(MESSAGE);
-            alert(MESSAGE);
+            console.error("Error: Can`t get cocktail from server: ",MESSAGE);
         }
         return COCKTAIL;
     }

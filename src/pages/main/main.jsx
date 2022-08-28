@@ -1,55 +1,27 @@
 import React, {useMemo, useState} from 'react';
 import {Header} from '@components/Header';
-import {QuickFiltersMenu} from '@components/QuickFiltersMenu';
-import {CocktailsList} from '@components/CocktailsList';
+import {QuickFiltersMenu as CategoryFilter} from '@components/QuickFiltersMenu';
+import {CocktailsList} from '@src/containers/CocktailsList';
 import {FooterSelectorTitle as Footer} from "@src/containers/FooterSelectorTitle";
 
 export const SearchingInputText = React.createContext(
     {
-        SearchingText: '',
+        SearchingText: false,
         changeSearchingText: () => {}
     });
-export const FinalCocktailsList = React.createContext(
-    {
-        CurrentCocktailsList: [],
-        setCurrentList: () => {}
-    }
-);
 export const SelectedCategory = React.createContext(
     {
-        SelectedFilter: [],
+        SelectedFilter: false,
         setSelectedCategory: () => {}
-    }
-);
-export const Searching = React.createContext(
-    {
-        CardSearch: {},
-        setSearchingStatuses: () => {}
     }
 );
 
 export const Main = () => {
-    const [SearchingText, changeSearchingText] = useState("");
-    const [CurrentCocktailsList, setCurrentList] = useState([]);
-    const [SelectedFilter, setSelectedCategory] = useState("");
-    const [CardSearch, setSearching] = useState(
-        {
-            InProcess: false,
-            UnfindedName: false,
-            NoCocktailCard: false
-        }
-    );
+    const [SearchingText, changeSearchingText] = useState(false);
+    const [SelectedFilter, setSelectedCategory] = useState(false);
     const SearchText = useMemo(
         () => ({SearchingText, changeSearchingText}),
         [SearchingText]
-    )
-    const InitialSearch = useMemo(
-        () => ({CardSearch, setSearching}),
-        [CardSearch]
-    )
-    const SettedCocktailList = useMemo(
-        () => ({CurrentCocktailsList, setCurrentList}),
-        [CurrentCocktailsList]
     )
     const CurrentSelectedFilter = useMemo(
         () => ({SelectedFilter, setSelectedCategory}),
@@ -58,22 +30,16 @@ export const Main = () => {
 
     return (
         <SearchingInputText.Provider value={SearchText} >
-        {/*<HeaderPageTitle.Provider value={PageTitle} >*/}
-        <FinalCocktailsList.Provider value={SettedCocktailList} >
         <SelectedCategory.Provider value={CurrentSelectedFilter} >
-        <Searching.Provider value={InitialSearch} >
             <>
                 <Header />
                 <main className="main-content">
-                    <QuickFiltersMenu />
+                    <CategoryFilter />
                     <CocktailsList />
                 </main>
                 <Footer />
             </>
-        </Searching.Provider>
         </SelectedCategory.Provider>
-        </FinalCocktailsList.Provider>
-        {/*</HeaderPageTitle.Provider>*/}
         </SearchingInputText.Provider>
     );
 };

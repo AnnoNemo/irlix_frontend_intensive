@@ -1,1 +1,1 @@
-export {Main, SearchingInputText, FinalCocktailsList, SelectedCategory, Searching} from './main';
+export {Main, SearchingInputText, SelectedCategory} from './main';
