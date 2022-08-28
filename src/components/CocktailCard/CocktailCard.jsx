@@ -1,31 +1,42 @@
-import React, {useContext, memo} from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
-import {FinalCocktailsList} from '@pages/main/main';
+import {EmptySearchResult} from '@components/EmptySearchResult';
+import {UnfindedCocktailCard} from '@components/UnfindedCocktailCard';
+import {SearchingInputText} from "@pages/main";
 
-export const CocktailCard = memo(({cocktailList}) => {
+export const CocktailCard = ({cocktailList}) => {
 
-    return (
-        <>
-            {
-                cocktailList.map(({id, name, alcohol, type, short_description, photo}, index) =>
-                    <article className="cocktail-card" key={id}>
-                        <Link className="cocktail-card__content-wrapper" to={`/cocktail/${id}`}>
-                            <div className="alcohol-percent-badge">
-                                <div className="alcohol-percent-badge__wrapper">
-                                    <div className="alcohol-percent-badge__value">{alcohol}%</div>
-                                    <div className="alcohol-percent-badge__text">{type}</div>
+    const {SearchingText, changeSearchingText} = useContext(SearchingInputText);
+
+    if (SearchingText === "" || SearchingText.length <= 1) {return <EmptySearchResult />}
+
+    switch (cocktailList.length > 0) {
+        case true:
+            return (
+                <>
+                    {
+                        cocktailList.map(({id, name, alcohol, type, short_description, photo}, index) =>
+                            <article className="cocktail-card" key={id}>
+                                <div className="cocktail-card__content-wrapper" >
+                                    <div className="alcohol-percent-badge">
+                                        <div className="alcohol-percent-badge__wrapper">
+                                            <div className="alcohol-percent-badge__value">{alcohol}%</div>
+                                            <div className="alcohol-percent-badge__text">{type}</div>
+                                        </div>
+                                    </div>
+                                    <Link className="cocktail-card__info" to={`/cocktail/${id}`}>
+                                        <div className="cocktail-card__name">{name}</div>
+                                        <div className="cocktail-card__description">{short_description}</div>
+                                    </Link>
                                 </div>
-                            </div>
-                            <div className="cocktail-card__info">
-                                <div className="cocktail-card__name">{name}</div>
-                                <div className="cocktail-card__description">{short_description}</div>
-                            </div>
-                        </Link>
-                        <img className="cocktail-card__photo" src={require(`@images/${photo}`)}
-                             alt={`Фото коктейля ${name.toLowerCase()}`}/>
-                    </article>
-                )
-            }
-        </>
-    )
-});
+                                <img className="cocktail-card__photo" src={require(`@images/${photo}`)}
+                                     alt={`Фото коктейля ${name.toLowerCase()}`}/>
+                            </article>
+                        )
+                    }
+                </>
+            );
+        case false:
+            return (<UnfindedCocktailCard />);
+    }
+};

@@ -5,7 +5,7 @@ import {SelectedCategory} from "@pages/main";
 export const QuickFiltersMenu = () => {
     const {SelectedFilter, setSelectedCategory} = useContext(SelectedCategory);
 
-    const setCheckStatus = (element, index) => {
+    const setCheckStatus = (element) => {
         const ELEMENT = element.target;
         // find the parent li, to change his class
         const PARENT_ELEMENT = ELEMENT.closest(
@@ -26,7 +26,7 @@ export const QuickFiltersMenu = () => {
                             break;
                         case false:
                             PARENT_ELEMENT.className = "quick-filters-menu__list-item";
-                            setSelectedCategory('');
+                            setSelectedCategory(null);
                             break;
                     }
                 }
@@ -51,7 +51,7 @@ export const QuickFiltersMenu = () => {
                                         <input
                                             type="checkbox"
                                             className='quick-filters-menu__list-item-selector'
-                                            onChange={(element)=> setCheckStatus(element, index)}
+                                            onChange={(element)=> setCheckStatus(element)}
                                             name={`category_quick_filter_${index}`}
                                             value={name}
                                         />

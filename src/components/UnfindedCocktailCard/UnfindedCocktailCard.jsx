@@ -1,11 +1,7 @@
 import React, {useContext} from 'react';
-import {Searching} from '@pages/main/main';
 
 export const UnfindedCocktailCard = () => {
 
-    const {CardSearch, setSearching} = useContext(Searching);
-
-    if (!CardSearch.UnfindedName) { return null; }
     const wrong_search_card = {
             not_found_text: "Ничего не найдено",
             empty_name: "Пусто",

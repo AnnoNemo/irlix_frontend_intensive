@@ -1,10 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import pageTitleReducer from './reducers/pageTitleSlice';
-import cocktailsListReducer from './reducers/cocktailsListSlice';
+import {reducers} from "@src/store/reducers/rootReducer";
 
 export const store = configureStore({
-    reducer: {
-        title: pageTitleReducer,
-        cocktails: cocktailsListReducer,
-    },
+    reducer: reducers,
 });

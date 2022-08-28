@@ -10,7 +10,8 @@ function App() {
     return (
         <>
             <Routes>
-                <Route  path="/" element={<Main />} />
+                <Route path="/" element={<Main />} />
+                <Route path="/irlix_frontend_intensive" element={<Main />} />
                 <Route path="cocktail/:id" element={<Cocktail />} />
             </Routes>
         </>
