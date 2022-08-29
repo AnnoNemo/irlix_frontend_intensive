@@ -1868,9 +1868,6 @@ function App() {
     path: "/",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_main__WEBPACK_IMPORTED_MODULE_3__.Main, null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
-    path: "/irlix_frontend_intensive",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_main__WEBPACK_IMPORTED_MODULE_3__.Main, null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
     path: "cocktail/:id",
     exact: true,
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_cocktail__WEBPACK_IMPORTED_MODULE_4__.Cocktail, null)
