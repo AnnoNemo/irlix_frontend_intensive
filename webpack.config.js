@@ -52,7 +52,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: 'auto',
+    publicPath: '/dist',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/[name][hash][ext][query]',
     clean: true,

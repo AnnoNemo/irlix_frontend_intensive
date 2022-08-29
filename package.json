@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/AnnoNemo/irlix_frontend_intensive/issues"
   },
-  "homepage": "https://github.com/AnnoNemo/irlix_frontend_intensive/public/",
+  "homepage": "https://github.com/AnnoNemo/irlix_frontend_intensive/",
   "_moduleAliases": {},
   "devDependencies": {
     "@babel/core": "^7.18.5",
