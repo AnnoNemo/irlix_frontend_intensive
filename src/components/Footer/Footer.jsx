@@ -22,20 +22,19 @@ export const Footer = ({setMainTitle, setSearchTitle}) => {
         }
     }
 
-    const pressEscapeHandler = useCallback((event) => {
+    const pressEscapeHandler = (event) => {
         if (event.key === "Escape" && SearchCheckboxStatus) {
             event.preventDefault();
             openSearch();
         }
-    }, []);
+    };
 
     useEffect(() => {
         document.addEventListener("keydown", pressEscapeHandler);
-
         return () => {
             document.removeEventListener("keydown", pressEscapeHandler);
         };
-    }, []);
+    }, [SearchCheckboxStatus]);
 
     useEffect(
         () => {
