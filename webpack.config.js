@@ -48,11 +48,11 @@ module.exports = {
   devServer: {
     port: 20102,
     hot: true,
-    // historyApiFallback: true,
+    historyApiFallback: true,
   },
 
   output: {
-    // publicPath: '/',
+    publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/[name][hash][ext][query]',
     clean: true,
