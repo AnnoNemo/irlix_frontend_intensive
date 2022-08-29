@@ -11,7 +11,6 @@ function App() {
         <>
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route path="/irlix_frontend_intensive" element={<Main />} />
                 <Route path="cocktail/:id" exact element={<Cocktail />} />
             </Routes>
         </>
