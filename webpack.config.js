@@ -15,8 +15,8 @@ const plugins = [
     filename: mode === 'production' ? 'styles/[name].[contenthash].css' : 'styles/[name].css',
   }),
   new HtmlWebpackPlugin({
-    template: './public/index.html',
-    favicon: './public/icons/favicon.svg'
+    template: 'public/index.html',
+    favicon: 'public/icons/favicon.svg'
   }),
 ];
 
