@@ -1,6 +1,6 @@
 # Проект для интенсива по frontend разработке.
 
-Готовая сборка находится по ссылке: [жмяк](https://annonemo.github.io/irlix_frontend_intensive/public/index.html) 
+Готовая сборка находится по ссылке: [жмяк](https://annonemo.github.io/irlix_frontend_intensive/dist/index.html) 
 
 ### Описание
 
