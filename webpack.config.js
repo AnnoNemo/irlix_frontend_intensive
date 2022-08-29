@@ -30,7 +30,7 @@ module.exports = {
   target,
   plugins,
   devtool: 'source-map',
-  entry: './src/index.js',
+  entry: './index.js',
   resolve: {
     alias: {
       "@root"      : path.resolve(__dirname),
