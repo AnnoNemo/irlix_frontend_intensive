@@ -52,7 +52,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: '/irlix_frontend_intensive',
+    publicPath: path.resolve(__dirname, '/'),
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/[name][hash][ext][query]',
     clean: true,
