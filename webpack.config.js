@@ -30,7 +30,7 @@ module.exports = {
   target,
   plugins,
   devtool: 'source-map',
-  entry: './index.js',
+  entry: './src/index.js',
   resolve: {
     alias: {
       "@root"      : path.resolve(__dirname),
@@ -52,7 +52,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: '/dist',
+    publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/[name][hash][ext][query]',
     clean: true,

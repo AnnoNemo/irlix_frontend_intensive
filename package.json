@@ -2,7 +2,7 @@
   "name": "irlix_front_intensive_test_exercise",
   "version": "1.0.0",
   "description": "Learning work for frontend intensive",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "cross-env SERVE=true webpack serve --config webpack.config.js",
     "build": "webpack --config webpack.config.js",

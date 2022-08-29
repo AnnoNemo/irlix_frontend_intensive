@@ -6,7 +6,6 @@ import {Main} from '@pages/main';
 import {Cocktail} from '@pages/cocktail';
 
 function App() {
-
     return (
         <>
             <Routes>
