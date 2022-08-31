@@ -8,8 +8,8 @@ import App from '@src/App';
 const ROOT = ReactDOM.createRoot(document.getElementById('root'));
 ROOT.render(
     <Provider store={store}>
-        <BrowserRouter basename="/irlix_frontend_intensive">
+        <HashRouter>
             <App />
-        </BrowserRouter>
+        </HashRouter>
     </Provider>
 );
