@@ -52,7 +52,6 @@ module.exports = {
   },
 
   output: {
-    publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
     filename: "bundled_irlix_pub.js",
     assetModuleFilename: 'assets/[name][hash][ext][query]',
